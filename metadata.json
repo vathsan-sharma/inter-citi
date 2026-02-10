@@ -1,0 +1,7 @@
+{
+  "name": "Interciti LTL Logistics",
+  "description": "Professional website for Interciti, a premier LTL freight carrier specializing in one and two day service across Canada and the USA.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
