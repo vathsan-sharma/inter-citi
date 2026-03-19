@@ -10,11 +10,17 @@ const Footer: React.FC = () => {
           {/* About Column */}
           <div className="col-span-1 lg:col-span-1">
             <div className="flex flex-col mb-8">
-              <span className="text-2xl font-extrabold tracking-tighter text-white">INTER-CITI</span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-500">Logistics</span>
+              <div className="bg-white p-2 rounded-xl shadow-sm inline-block w-fit mb-4">
+                <img 
+                  src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(30).png" 
+                  alt="Intercity Logistics Canada" 
+                  className="h-8 w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
             <p className="text-sm leading-relaxed mb-8 text-slate-500">
-              Interciti Logistics specializes in one and two day LTL service throughout Canada and America since 1990. We keep your business in motion.
+              Intercity Logistics Canada specializes in fast, reliable, and cost-effective freight solutions throughout Canada. We keep your business in motion.
             </p>
             <div className="flex space-x-4">
               <SocialIcon label="Li" />
@@ -26,12 +32,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-bold uppercase tracking-[0.2em] text-[10px] mb-8">Navigation</h3>
             <ul className="space-y-4 text-[13px] font-semibold">
+              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
-              <li><Link to="/service-areas" className="hover:text-white transition-colors">Service Areas</Link></li>
-              <li><Link to="/industries" className="hover:text-white transition-colors">Industries</Link></li>
-              <li><Link to="/resources" className="hover:text-white transition-colors">Resources</Link></li>
-              <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -41,15 +45,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-[13px]">
               <li className="flex flex-col">
                 <span className="text-slate-600 uppercase text-[10px] font-bold tracking-widest mb-1">Email</span>
-                <a href="mailto:sales@inter-citi.com" className="text-white hover:text-blue-400 transition-colors">sales@inter-citi.com</a>
+                <a href="mailto:info@inter-ciiti.com" className="text-white hover:text-blue-400 transition-colors">info@inter-ciiti.com</a>
               </li>
               <li className="flex flex-col">
-                <span className="text-slate-600 uppercase text-[10px] font-bold tracking-widest mb-1">Toll Free</span>
-                <a href="tel:1-800-871-4243" className="text-white hover:text-blue-400 transition-colors">1-800-871-4243</a>
+                <span className="text-slate-600 uppercase text-[10px] font-bold tracking-widest mb-1">Phone</span>
+                <a href="tel:(416) 410-6195" className="text-white hover:text-blue-400 transition-colors">(416) 410-6195</a>
               </li>
               <li className="flex flex-col">
                 <span className="text-slate-600 uppercase text-[10px] font-bold tracking-widest mb-1">Office</span>
-                <span className="text-white">891 Rowntree Dairy Rd, <br/> Woodbridge, ON L4L 5W3</span>
+                <span className="text-white">10 Thornmount Dr, <br/> Scarborough, ON M1B 3J4</span>
               </li>
             </ul>
           </div>
@@ -57,8 +61,8 @@ const Footer: React.FC = () => {
           {/* CTA */}
           <div className="bg-white/5 p-8 rounded-2xl border border-white/5">
             <h3 className="text-white font-bold uppercase tracking-[0.2em] text-[10px] mb-4">Start Shipping</h3>
-            <p className="text-xs text-slate-500 mb-6 leading-relaxed">Ready to experience the Interciti advantage? Get a fast quote today.</p>
-            <Link to="/track-quote" className="block text-center bg-blue-600 text-white py-3 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-blue-500 transition-colors">
+            <p className="text-xs text-slate-500 mb-6 leading-relaxed">Ready to experience the Intercity advantage? Get a fast quote today.</p>
+            <Link to="/contact" className="block text-center bg-blue-600 text-white py-3 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-blue-500 transition-colors">
               Request a Quote
             </Link>
           </div>
@@ -66,11 +70,11 @@ const Footer: React.FC = () => {
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-[11px] font-bold uppercase tracking-widest text-slate-600">
-            All rights reserved © {new Date().getFullYear()} Interciti Logistics
+            All rights reserved © {new Date().getFullYear()} Intercity Logistics Canada
           </div>
           <div className="flex space-x-8 text-[11px] font-bold uppercase tracking-widest">
-            <Link to="/resources" className="text-slate-600 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/resources" className="text-slate-600 hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link to="/about" className="text-slate-600 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/about" className="text-slate-600 hover:text-white transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>

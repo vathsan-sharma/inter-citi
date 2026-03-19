@@ -19,9 +19,7 @@ const Navbar: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Service Areas', path: '/service-areas' },
-    { name: 'Industries', path: '/industries' },
-    { name: 'Resources', path: '/resources' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -32,9 +30,13 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-12">
           <div className="flex items-center">
             <Link to="/" className="flex items-center group">
-              <div className="flex flex-col">
-                <span className={`text-2xl font-extrabold tracking-tighter leading-none transition-colors ${scrolled ? 'text-blue-900' : 'text-white'}`}>INTER-CITI</span>
-                <span className={`text-[10px] font-bold uppercase tracking-[0.3em] mt-0.5 transition-colors ${scrolled ? 'text-blue-600' : 'text-blue-400'}`}>Logistics</span>
+              <div className="bg-white p-2 rounded-xl shadow-sm group-hover:shadow-md transition-all">
+                <img 
+                  src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(30).png" 
+                  alt="Intercity Logistics Canada" 
+                  className="h-10 w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </Link>
           </div>
@@ -55,7 +57,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <Link
-              to="/track-quote"
+              to="/contact"
               className={`pill-button px-6 py-2.5 text-[11px] font-bold uppercase tracking-widest border transition-all ${
                 scrolled 
                   ? 'bg-blue-900 text-white border-blue-900 hover:bg-blue-800' 
@@ -101,7 +103,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <Link
-              to="/track-quote"
+              to="/contact"
               onClick={() => setIsOpen(false)}
               className="block mt-6 text-center bg-blue-900 text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm"
             >
