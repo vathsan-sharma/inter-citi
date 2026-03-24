@@ -13,7 +13,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen flex flex-col selection:bg-brand-red selection:text-white">
       <Navbar />
       <main className="flex-grow">
         {children}

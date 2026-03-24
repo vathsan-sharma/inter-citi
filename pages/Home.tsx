@@ -56,7 +56,7 @@ const Home: React.FC = () => {
 
         <motion.div 
           style={{ y: textY, opacity, scale }}
-          className="relative z-10 max-w-7xl mx-auto w-full pt-28 pb-32 md:pt-48 md:pb-64"
+          className="relative z-10 max-w-7xl mx-auto w-full pt-24 pb-12 md:pt-32 md:pb-20"
         >
           <div className="max-w-5xl">
             <motion.div
@@ -286,7 +286,10 @@ const Home: React.FC = () => {
 
       {/* Why Choose Us - Technical Grid Layout */}
       <section className="py-16 md:py-32 bg-slate-950 overflow-hidden relative border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        {/* Background Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+        
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
             <div className="max-w-2xl">
               <motion.span 
@@ -303,11 +306,17 @@ const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border border-white/10 rounded-3xl overflow-hidden">
-            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/5 transition-colors group">
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-white/10 rounded-3xl overflow-hidden bg-slate-900/20 backdrop-blur-sm">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/5 transition-colors group"
+            >
               <div className="flex justify-between items-start mb-12">
-                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red group-hover:scale-110 transition-transform">
-                  <Globe className="w-6 h-6" />
+                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-500">
+                  <Globe className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="font-mono text-white/20 text-xs">01 // NETWORK</span>
               </div>
@@ -318,15 +327,21 @@ const Home: React.FC = () => {
               <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                 <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">Coverage: 100%</span>
                 <div className="flex gap-1">
-                  {[1,2,3,4,5].map(i => <div key={i} className="w-1 h-1 bg-brand-red rounded-full"></div>)}
+                  {[1,2,3,4,5].map(i => <motion.div key={i} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, delay: i * 0.2, repeat: Infinity }} className="w-1 h-1 bg-brand-red rounded-full"></motion.div>)}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/5 transition-colors group">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/5 transition-colors group"
+            >
               <div className="flex justify-between items-start mb-12">
-                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red group-hover:scale-110 transition-transform">
-                  <BarChart3 className="w-6 h-6" />
+                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-500">
+                  <BarChart3 className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="font-mono text-white/20 text-xs">02 // TECH</span>
               </div>
@@ -337,15 +352,21 @@ const Home: React.FC = () => {
               <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                 <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">Uptime: 99.9%</span>
                 <div className="flex gap-1">
-                  {[1,2,3,4,5].map(i => <div key={i} className="w-1 h-1 bg-brand-red rounded-full"></div>)}
+                  {[1,2,3,4,5].map(i => <motion.div key={i} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, delay: i * 0.2, repeat: Infinity }} className="w-1 h-1 bg-brand-red rounded-full"></motion.div>)}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-8 md:p-12 hover:bg-white/5 transition-colors group">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="p-8 md:p-12 hover:bg-white/5 transition-colors group"
+            >
               <div className="flex justify-between items-start mb-12">
-                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red group-hover:scale-110 transition-transform">
-                  <Zap className="w-6 h-6" />
+                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-500">
+                  <Zap className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="font-mono text-white/20 text-xs">03 // SPEED</span>
               </div>
@@ -356,10 +377,10 @@ const Home: React.FC = () => {
               <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                 <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">Avg. Time: -24H</span>
                 <div className="flex gap-1">
-                  {[1,2,3,4,5].map(i => <div key={i} className="w-1 h-1 bg-brand-red rounded-full"></div>)}
+                  {[1,2,3,4,5].map(i => <motion.div key={i} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, delay: i * 0.2, repeat: Infinity }} className="w-1 h-1 bg-brand-red rounded-full"></motion.div>)}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -369,7 +390,12 @@ const Home: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,rgba(225,29,72,0.05)_0%,transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-24 gap-6 md:gap-8">
-            <div className="max-w-2xl">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl"
+            >
               <motion.span 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -378,11 +404,17 @@ const Home: React.FC = () => {
                 Our Expertise
               </motion.span>
               <h2 className="hero-title text-4xl md:text-8xl text-white mb-4 md:mb-6 tracking-tighter">Core <span className="text-outline text-white">Services</span></h2>
-            </div>
-            <Link to="/services" className="group flex items-center gap-4 text-white font-bold tracking-widest text-[10px] md:text-[11px] uppercase">
-              View All Services
-              <span className="w-8 md:w-12 h-[1px] bg-white group-hover:w-16 md:group-hover:w-20 transition-all"></span>
-            </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <Link to="/services" className="group flex items-center gap-4 text-white font-bold tracking-widest text-[10px] md:text-[11px] uppercase">
+                View All Services
+                <span className="w-8 md:w-12 h-[1px] bg-white group-hover:w-16 md:group-hover:w-20 transition-all"></span>
+              </Link>
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
@@ -391,18 +423,21 @@ const Home: React.FC = () => {
               title="Express Courier"
               desc="Fast and reliable courier solutions for your most urgent shipments across Canada."
               image="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/05.jpg"
+              delay={0.1}
             />
             <ServiceCard 
               icon={<Warehouse className="w-6 h-6 md:w-8 md:h-8" />}
               title="Warehousing"
               desc="Secure, climate-controlled storage and efficient distribution management."
               image="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/06.jpg"
+              delay={0.2}
             />
             <ServiceCard 
               icon={<Package className="w-6 h-6 md:w-8 md:h-8" />}
               title="Last Mile"
               desc="The final link in your supply chain, delivered with precision to your customer's doorstep."
               image="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/01.jpg"
+              delay={0.3}
             />
           </div>
         </div>
@@ -451,53 +486,88 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Global Network Section */}
+      {/* National Reach Section */}
       <section className="py-16 md:py-32 bg-slate-900 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <motion.span 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="text-white/30 font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block"
+                className="text-brand-red font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block"
               >
-                Global Reach
+                National Reach
               </motion.span>
-              <h2 className="hero-title text-4xl md:text-8xl text-white mb-8 tracking-tighter">Connected <br/> <span className="text-white/20">World</span></h2>
+              <h2 className="hero-title text-4xl md:text-8xl text-white mb-8 tracking-tighter">Coast to <br/> <span className="text-white/20">Coast</span></h2>
               <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-12 max-w-md">
-                Our network extends far beyond borders. With strategic hubs in major global trade centers, we ensure your cargo moves seamlessly across continents.
+                No matter where you are located, Inter-Citi Logistics provides reliable delivery solutions across Canada. From urban centres to regional and remote destinations, we ensure efficient, professional service with the responsiveness and dependability our clients expect.
               </p>
+              
+              <div className="space-y-6 mb-12">
+                <div className="flex flex-wrap gap-3">
+                  {['Ontario', 'Quebec', 'British Columbia', 'Alberta', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Newfoundland and Labrador', 'Prince Edward Island'].map((province, idx) => (
+                    <motion.span 
+                      key={province} 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: idx * 0.05 }}
+                      className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white hover:border-white/30 transition-colors cursor-default"
+                    >
+                      {province}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex flex-wrap gap-8">
                 <div className="flex flex-col">
-                  <span className="text-3xl font-black text-white">45+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Countries</span>
+                  <span className="text-3xl font-black text-white">10</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Provinces</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-3xl font-black text-white">12</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Global Hubs</span>
+                  <span className="text-3xl font-black text-white">100%</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Canadian Owned</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-3xl font-black text-white">24/7</span>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Operations</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
             
-            <div className="relative aspect-square md:aspect-video bg-white/5 rounded-[3rem] border border-white/10 overflow-hidden group">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="relative aspect-square md:aspect-video bg-white/5 rounded-[3rem] border border-white/10 overflow-hidden group"
+            >
               {/* Dot Matrix Map Visualization */}
               <div className="absolute inset-0 p-12 grid grid-cols-20 grid-rows-10 gap-2 opacity-20">
                 {[...Array(200)].map((_, i) => (
-                  <div key={i} className="w-1 h-1 bg-white rounded-full"></div>
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0.2 }}
+                    whileInView={{ opacity: [0.2, 0.5, 0.2] }}
+                    transition={{ duration: 2, delay: i * 0.01, repeat: Infinity }}
+                    className="w-1 h-1 bg-white rounded-full"
+                  ></motion.div>
                 ))}
               </div>
               
               {/* Animated Pings */}
               <MapPing top="30%" left="20%" label="Vancouver" />
               <MapPing top="40%" left="45%" label="Toronto" />
-              <MapPing top="35%" left="75%" label="London" />
-              <MapPing top="60%" left="85%" label="Dubai" />
-              <MapPing top="50%" left="30%" label="New York" />
-            </div>
+              <MapPing top="35%" left="55%" label="Montreal" />
+              <MapPing top="45%" left="35%" label="Calgary" />
+              <MapPing top="38%" left="65%" label="Halifax" />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -569,8 +639,12 @@ const FeatureCard: React.FC<{number: string, title: string, desc: string, icon: 
   </motion.div>
 );
 
-const ServiceCard: React.FC<{icon: React.ReactNode, title: string, desc: string, image: string}> = ({ icon, title, desc, image }) => (
+const ServiceCard: React.FC<{icon: React.ReactNode, title: string, desc: string, image: string, delay?: number}> = ({ icon, title, desc, image, delay = 0 }) => (
   <motion.div 
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay }}
     whileHover={{ y: -10 }}
     className="bg-white/5 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-lg border border-white/10 group backdrop-blur-sm"
   >

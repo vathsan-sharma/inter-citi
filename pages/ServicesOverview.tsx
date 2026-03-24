@@ -41,37 +41,46 @@ const ServicesOverview: React.FC = () => {
   return (
     <div className="bg-slate-950 text-white min-h-screen selection:bg-red-500/30">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 overflow-hidden border-b border-white/5">
+      <section className="relative overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/10 blur-[120px] rounded-full animate-pulse"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-slate-600/10 blur-[120px] rounded-full"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 pt-32 pb-20 md:pt-48 md:pb-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-5xl"
           >
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex items-center gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex items-center gap-3 mb-8 md:mb-12"
             >
-              <span className="w-12 h-[1px] bg-red-600"></span>
-              <span className="text-red-500 font-mono text-xs uppercase tracking-[0.3em]">Our Expertise</span>
+              <span className="bg-brand-red w-2 h-2 rounded-full animate-pulse"></span>
+              <span className="text-white/40 font-bold uppercase tracking-[0.5em] text-[7px] md:text-[9px]">Our Expertise</span>
             </motion.div>
             
-            <h1 className="text-6xl md:text-9xl font-bold mb-10 tracking-tighter leading-[0.85] uppercase italic font-serif">
-              LOGISTICS <br/> 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/20">REDEFINED</span>
-            </h1>
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="hero-title text-white mb-6 md:mb-8"
+            >
+              Logistics <span className="text-brand-red italic">Redefined.</span>
+            </motion.h1>
             
-            <p className="text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed font-light">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="hero-subtitle mb-8 md:mb-12 max-w-2xl"
+            >
               Specialized logistics solutions engineered for the unique demands of the Canadian landscape. Precision, speed, and absolute reliability.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -122,18 +131,25 @@ const ServicesOverview: React.FC = () => {
                 <div className="w-full lg:w-1/2">
                   <div className="mb-8">
                     <span className="text-red-500 font-mono text-sm mb-4 block tracking-widest uppercase">{s.subtitle}</span>
-                    <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight leading-tight uppercase italic">{s.title}</h2>
+                    <h2 className="hero-title text-4xl md:text-6xl text-white tracking-tighter mb-8 italic uppercase">{s.title}</h2>
                     <p className="text-slate-400 text-xl mb-12 leading-relaxed font-light">{s.desc}</p>
                   </div>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                     {s.features.map((f, i) => (
-                      <div key={i} className="flex items-start gap-4 group/item">
+                      <motion.div 
+                        key={i} 
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.5 + (i * 0.1) }}
+                        className="flex items-start gap-4 group/item"
+                      >
                         <div className="mt-1 w-5 h-5 rounded-full border border-red-600/30 flex items-center justify-center group-hover/item:border-red-600 transition-colors">
                           <CheckCircle2 className="w-3 h-3 text-red-600 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                         </div>
                         <span className="text-slate-300 font-medium text-sm tracking-tight">{f}</span>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
 
@@ -162,13 +178,20 @@ const ServicesOverview: React.FC = () => {
               { icon: <Globe className="w-6 h-6" />, title: 'National Reach', desc: 'Seamless logistics network spanning from coast to coast across Canada.' },
               { icon: <Zap className="w-6 h-6" />, title: 'Rapid Response', desc: 'Real-time optimization and 24/7 support for time-critical needs.' }
             ].map((cap, i) => (
-              <div key={i} className="p-8 rounded-3xl border border-white/10 hover:border-red-600/50 transition-colors group">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="p-8 rounded-3xl border border-white/10 hover:border-red-600/50 transition-colors group"
+              >
                 <div className="w-12 h-12 rounded-2xl bg-red-600/10 flex items-center justify-center text-red-500 mb-6 group-hover:scale-110 transition-transform">
                   {cap.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4 uppercase italic tracking-tight">{cap.title}</h3>
                 <p className="text-slate-400 leading-relaxed font-light">{cap.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -181,7 +204,7 @@ const ServicesOverview: React.FC = () => {
         </div>
         
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase italic">Ready to optimize?</h2>
+          <h2 className="hero-title text-5xl md:text-8xl text-white tracking-tighter mb-8 italic uppercase">Ready to <span className="text-brand-red">optimize?</span></h2>
           <p className="text-xl text-slate-400 mb-12 font-light">
             Contact our team today for a custom solution tailored to your business needs in Canada.
           </p>
