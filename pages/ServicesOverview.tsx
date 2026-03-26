@@ -10,10 +10,10 @@ const ServicesOverview: React.FC = () => {
       id: 'express-courier',
       title: 'Express Courier Services',
       subtitle: 'Time-Critical Logistics',
-      desc: 'Fast, reliable, and secure courier solutions across Canada. We specialize in time-sensitive deliveries that keep your business moving at the speed of commerce.',
+      desc: 'Fast, reliable, and secure courier solutions across Canada. We specialize in time sensitive deliveries that keep your business moving at the speed of commerce.',
       features: ['Same-day local delivery', 'Next-day regional shipping', 'Real-time tracking and visibility', 'Secure handling of sensitive items'],
       icon: <Truck className="w-8 h-8 text-white" />,
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000",
+      image: "https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/08.jpg",
       stats: { label: 'On-Time Rate', value: '99.9%' }
     },
     {
@@ -23,7 +23,7 @@ const ServicesOverview: React.FC = () => {
       desc: 'Strategic storage and distribution solutions from our Scarborough hub. Our facilities are designed for efficiency, security, and scalability.',
       features: ['Temperature-controlled storage', 'Inventory management systems', 'Cross-docking services', '24/7 CCTV monitoring'],
       icon: <Warehouse className="w-8 h-8 text-white" />,
-      image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=2000",
+      image: "https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/07.jpg",
       stats: { label: 'Storage Capacity', value: '50k+ sqft' }
     },
     {
@@ -33,21 +33,21 @@ const ServicesOverview: React.FC = () => {
       desc: 'The final step in the delivery process is the most critical. We provide seamless last-mile delivery that ensures your customers receive their orders on time, every time.',
       features: ['Residential and commercial delivery', 'White-glove service options', 'Route optimization technology', 'Flexible delivery windows'],
       icon: <MapPin className="w-8 h-8 text-white" />,
-      image: "https://images.unsplash.com/photo-1521331044974-093759637d2e?auto=format&fit=crop&q=80&w=2000",
+      image: "https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/09.jpg",
       stats: { label: 'Daily Deliveries', value: '5k+' }
     }
   ];
 
   return (
-    <div className="bg-slate-950 text-white min-h-screen selection:bg-red-500/30">
+    <div className="bg-white text-slate-900 min-h-screen selection:bg-brand-blue/30">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-white/5">
+      <section className="relative overflow-hidden border-b border-white/5 bg-brand-blue">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/10 blur-[120px] rounded-full animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-slate-600/10 blur-[120px] rounded-full"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 blur-[120px] rounded-full animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-accent/20 blur-[120px] rounded-full"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 pt-32 pb-20 md:pt-48 md:pb-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 pt-40 pb-20 md:pt-56 md:pb-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const ServicesOverview: React.FC = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex items-center gap-3 mb-8 md:mb-12"
             >
-              <span className="bg-brand-red w-2 h-2 rounded-full animate-pulse"></span>
+              <span className="bg-white w-2 h-2 rounded-full animate-pulse"></span>
               <span className="text-white/40 font-bold uppercase tracking-[0.5em] text-[7px] md:text-[9px]">Our Expertise</span>
             </motion.div>
             
@@ -70,14 +70,14 @@ const ServicesOverview: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="hero-title text-white mb-6 md:mb-8"
             >
-              Logistics <span className="text-brand-red italic">Redefined.</span>
+              Logistics <span className="text-white/20 italic">Redefined.</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="hero-subtitle mb-8 md:mb-12 max-w-2xl"
+              className="hero-subtitle text-white/60 mb-8 md:mb-12 max-w-2xl"
             >
               Specialized logistics solutions engineered for the unique demands of the Canadian landscape. Precision, speed, and absolute reliability.
             </motion.p>
@@ -86,7 +86,7 @@ const ServicesOverview: React.FC = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-32 relative">
+      <section className="py-32 relative bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 gap-32">
             {services.map((s, idx) => (
@@ -100,8 +100,8 @@ const ServicesOverview: React.FC = () => {
               >
                 {/* Image Side */}
                 <div className="w-full lg:w-1/2 relative group">
-                  <div className="absolute -inset-4 bg-red-600/5 rounded-[2rem] blur-2xl group-hover:bg-red-600/10 transition-colors duration-700"></div>
-                  <div className="relative aspect-[4/5] lg:aspect-square overflow-hidden rounded-[2rem] border border-white/10">
+                  <div className="absolute -inset-4 bg-brand-blue/5 rounded-[2rem] blur-2xl group-hover:bg-brand-blue/10 transition-colors duration-700"></div>
+                  <div className="relative aspect-[4/5] lg:aspect-square overflow-hidden rounded-[2rem] border border-slate-100">
                     <motion.img 
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 1.5 }}
@@ -110,16 +110,16 @@ const ServicesOverview: React.FC = () => {
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-transparent to-transparent opacity-60"></div>
                     
                     {/* Floating Stat Card */}
-                    <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl">
+                    <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl">
                       <div className="flex justify-between items-end">
                         <div>
-                          <p className="text-slate-400 text-xs uppercase tracking-widest mb-1">{s.stats.label}</p>
-                          <p className="text-3xl font-bold font-mono">{s.stats.value}</p>
+                          <p className="text-white/60 text-xs uppercase tracking-widest mb-1">{s.stats.label}</p>
+                          <p className="text-3xl font-bold font-mono text-white">{s.stats.value}</p>
                         </div>
-                        <div className="p-3 bg-red-600 rounded-xl">
+                        <div className="p-3 bg-brand-blue rounded-xl">
                           {s.icon}
                         </div>
                       </div>
@@ -130,9 +130,9 @@ const ServicesOverview: React.FC = () => {
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2">
                   <div className="mb-8">
-                    <span className="text-red-500 font-mono text-sm mb-4 block tracking-widest uppercase">{s.subtitle}</span>
-                    <h2 className="hero-title text-4xl md:text-6xl text-white tracking-tighter mb-8 italic uppercase">{s.title}</h2>
-                    <p className="text-slate-400 text-xl mb-12 leading-relaxed font-light">{s.desc}</p>
+                    <span className="text-brand-blue font-mono text-sm mb-4 block tracking-widest uppercase">{s.subtitle}</span>
+                    <h2 className="hero-title text-4xl md:text-6xl text-slate-900 tracking-tighter mb-8 italic uppercase">{s.title}</h2>
+                    <p className="text-slate-500 text-xl mb-12 leading-relaxed font-light">{s.desc}</p>
                   </div>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
@@ -145,20 +145,20 @@ const ServicesOverview: React.FC = () => {
                         transition={{ duration: 0.4, delay: 0.5 + (i * 0.1) }}
                         className="flex items-start gap-4 group/item"
                       >
-                        <div className="mt-1 w-5 h-5 rounded-full border border-red-600/30 flex items-center justify-center group-hover/item:border-red-600 transition-colors">
-                          <CheckCircle2 className="w-3 h-3 text-red-600 opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                        <div className="mt-1 w-5 h-5 rounded-full border border-brand-blue/30 flex items-center justify-center group-hover/item:border-brand-blue transition-colors">
+                          <CheckCircle2 className="w-3 h-3 text-brand-blue opacity-0 group-hover/item:opacity-100 transition-opacity" />
                         </div>
-                        <span className="text-slate-300 font-medium text-sm tracking-tight">{f}</span>
+                        <span className="text-slate-600 font-medium text-sm tracking-tight">{f}</span>
                       </motion.div>
                     ))}
                   </div>
 
                   <Link 
                     to="/contact" 
-                    className="inline-flex items-center gap-6 text-white group/link"
+                    className="inline-flex items-center gap-6 text-slate-900 group/link"
                   >
                     <span className="text-xs font-bold uppercase tracking-[0.3em]">Inquire Now</span>
-                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-red-600 group-hover/link:border-red-600 transition-all duration-500">
+                    <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover/link:bg-brand-blue group-hover/link:border-brand-blue group-hover/link:text-white transition-all duration-500">
                       <ArrowRight className="w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
                     </div>
                   </Link>
@@ -170,7 +170,7 @@ const ServicesOverview: React.FC = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-32 bg-white/5 border-y border-white/5">
+      <section className="py-32 bg-brand-blue border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -184,13 +184,13 @@ const ServicesOverview: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-3xl border border-white/10 hover:border-red-600/50 transition-colors group"
+                className="p-8 rounded-3xl border border-white/10 hover:border-white/50 transition-colors group bg-white/5"
               >
-                <div className="w-12 h-12 rounded-2xl bg-red-600/10 flex items-center justify-center text-red-500 mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-6 group-hover:bg-white group-hover:text-brand-blue transition-all duration-500">
                   {cap.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 uppercase italic tracking-tight">{cap.title}</h3>
-                <p className="text-slate-400 leading-relaxed font-light">{cap.desc}</p>
+                <h3 className="text-xl font-bold mb-4 uppercase italic tracking-tight text-white">{cap.title}</h3>
+                <p className="text-white/40 leading-relaxed font-light">{cap.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -198,17 +198,17 @@ const ServicesOverview: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 text-center relative overflow-hidden">
+      <section className="py-32 text-center relative overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/5 blur-[160px] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/5 blur-[160px] rounded-full"></div>
         </div>
         
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h2 className="hero-title text-5xl md:text-8xl text-white tracking-tighter mb-8 italic uppercase">Ready to <span className="text-brand-red">optimize?</span></h2>
-          <p className="text-xl text-slate-400 mb-12 font-light">
+          <h2 className="hero-title text-5xl md:text-8xl text-slate-900 tracking-tighter mb-8 italic uppercase">Ready to <span className="text-brand-blue">optimize?</span></h2>
+          <p className="text-xl text-slate-500 mb-12 font-light">
             Contact our team today for a custom solution tailored to your business needs in Canada.
           </p>
-          <Link to="/contact" className="inline-block bg-red-600 text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-red-700 transition-all shadow-2xl shadow-red-600/20">
+          <Link to="/contact" className="inline-block bg-brand-blue text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-accent transition-all shadow-2xl shadow-brand-blue/20">
             Get a Custom Quote
           </Link>
         </div>

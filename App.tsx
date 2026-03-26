@@ -22,12 +22,12 @@ const CustomCursor: React.FC = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-red-600/50 rounded-full pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 border border-brand-blue/50 rounded-full pointer-events-none z-[9999] hidden md:block"
         animate={{ x: mousePos.x - 16, y: mousePos.y - 16 }}
         transition={{ type: "spring", damping: 20, stiffness: 250, mass: 0.5 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 bg-red-600 rounded-full pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-1.5 h-1.5 bg-brand-blue rounded-full pointer-events-none z-[9999] hidden md:block"
         animate={{ x: mousePos.x - 3, y: mousePos.y - 3 }}
         transition={{ type: "spring", damping: 30, stiffness: 400, mass: 0.2 }}
       />

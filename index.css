@@ -3,7 +3,8 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-brand-red: #E11D48;
+  --color-brand-blue: #002147;
+  --color-brand-accent: #004080;
   
   /* Type Scale */
   --text-xs: 0.75rem;
@@ -27,7 +28,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-slate-950 text-white overflow-x-hidden;
+    @apply font-sans antialiased bg-white text-slate-900 overflow-x-hidden;
     line-height: 1.5;
   }
 
@@ -67,7 +68,11 @@
   }
 
   .nav-glass {
-    @apply bg-slate-900/40 backdrop-blur-xl border border-white/10;
+    @apply bg-white/80 backdrop-blur-xl border-b border-slate-200;
+  }
+
+  .nav-glass-dark {
+    @apply bg-brand-blue/90 backdrop-blur-xl border-b border-white/10;
   }
 
   .pill-button {
@@ -75,11 +80,15 @@
   }
 
   .btn-brand {
-    @apply bg-brand-red text-white transition-all hover:bg-rose-700;
+    @apply bg-brand-blue text-white transition-all hover:bg-brand-accent;
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-[2rem] p-6 md:p-8 lg:p-12;
+    @apply bg-white border border-slate-200 rounded-[2rem] p-6 md:p-8 lg:p-12 shadow-sm;
+  }
+
+  .glass-card-dark {
+    @apply bg-brand-blue/5 backdrop-blur-md border border-white/10 rounded-[2rem] p-6 md:p-8 lg:p-12;
   }
 }
 
@@ -102,11 +111,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-950;
+  @apply bg-white;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+  @apply bg-brand-blue/20 rounded-full hover:bg-brand-blue/40 transition-colors;
 }
 
 /* Creative Typography Effects */

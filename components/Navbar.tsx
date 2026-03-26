@@ -17,18 +17,18 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-10 pt-4 md:pt-6">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 bg-slate-900/40 backdrop-blur-xl border border-white/10 px-4 md:px-6 py-2 md:py-3 rounded-2xl md:rounded-3xl shadow-2xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-10 pt-6 md:pt-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 bg-brand-blue/40 backdrop-blur-xl border border-white/10 px-4 md:px-6 py-3 md:py-4 rounded-2xl md:rounded-3xl shadow-2xl">
         
         {/* Left Nav Links */}
-        <div className="hidden lg:flex items-center">
-          <div className="flex items-center space-x-2">
+        <div className="hidden lg:flex items-center flex-1">
+          <div className="flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`text-[10px] font-bold uppercase tracking-widest transition-all hover:text-white px-4 py-2 rounded-lg ${
-                  isActive(link.path) ? 'text-white bg-brand-red' : 'text-white/60'
+                  isActive(link.path) ? 'text-white bg-brand-blue' : 'text-white/60'
                 }`}
               >
                 {link.name}
@@ -37,36 +37,36 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Center Logo - Integrated into the bar */}
+        {/* Center Logo */}
         <div className="flex items-center justify-center">
-          <Link to="/" className="flex items-center bg-white px-4 md:px-6 py-2 md:py-3 rounded-2xl md:rounded-3xl shadow-xl hover:scale-105 transition-transform">
+          <Link to="/" className="flex items-center bg-white px-4 py-2 rounded-xl md:rounded-2xl shadow-xl hover:scale-105 transition-transform">
             <img 
               src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(30).png" 
               alt="Inter-Citi Logistics" 
-              className="h-10 md:h-16 w-auto object-contain"
+              className="h-8 md:h-12 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </Link>
         </div>
 
         {/* Right Buttons */}
-        <div className="hidden lg:flex items-center gap-3">
-          <button className="bg-white text-slate-950 px-5 py-2.5 rounded-xl font-bold text-[9px] uppercase tracking-widest flex items-center gap-2 hover:bg-slate-100 transition-all shadow-lg group">
+        <div className="hidden lg:flex items-center gap-3 flex-1 justify-end">
+          <button className="bg-white text-brand-blue px-5 py-2.5 rounded-xl font-bold text-[9px] uppercase tracking-widest flex items-center gap-2 hover:bg-slate-100 transition-all shadow-lg group">
             Tracking
-            <div className="w-4 h-4 bg-slate-950 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+            <div className="w-4 h-4 bg-brand-blue rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
               <ArrowRight className="w-2.5 h-2.5 text-white" />
             </div>
           </button>
-          <Link to="/contact" className="bg-brand-red text-white px-5 py-2.5 rounded-xl font-bold text-[9px] uppercase tracking-widest flex items-center gap-2 hover:bg-rose-700 transition-all shadow-lg group">
+          <Link to="/contact" className="bg-brand-blue text-white px-5 py-2.5 rounded-xl font-bold text-[9px] uppercase tracking-widest flex items-center gap-2 hover:bg-brand-accent transition-all shadow-lg group">
             Contact
             <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-              <ArrowRight className="w-2.5 h-2.5 text-brand-red" />
+              <ArrowRight className="w-2.5 h-2.5 text-brand-blue" />
             </div>
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden">
+        <div className="lg:hidden ml-auto">
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="text-white flex items-center justify-center p-2"
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-20 md:top-28 left-4 md:left-6 right-4 md:right-6 bg-slate-900 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300 z-50">
+        <div className="lg:hidden absolute top-24 md:top-32 left-4 md:left-6 right-4 md:right-6 bg-brand-blue border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300 z-50">
           <div className="flex flex-col space-y-4 md:space-y-6">
             {navLinks.map((link) => (
               <Link
@@ -87,17 +87,17 @@ const Navbar: React.FC = () => {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`text-xs md:text-sm font-bold uppercase tracking-widest p-2 rounded-lg ${
-                  isActive(link.path) ? 'text-brand-red bg-white/5' : 'text-white/70'
+                  isActive(link.path) ? 'text-white bg-white/10' : 'text-white/70'
                 }`}
               >
                 {link.name}
               </Link>
             ))}
             <div className="pt-4 md:pt-6 border-t border-white/10 flex flex-col gap-3 md:gap-4">
-              <button className="bg-white text-slate-950 py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-widest">
+              <button className="bg-white text-brand-blue py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-widest">
                 Tracking Package
               </button>
-              <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-brand-red text-white py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-widest text-center">
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-white/10 text-white py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-widest text-center border border-white/10">
                 Get In touch with us
               </Link>
             </div>
