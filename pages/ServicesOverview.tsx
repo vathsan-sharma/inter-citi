@@ -54,23 +54,13 @@ const ServicesOverview: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl"
           >
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-3 mb-8 md:mb-12"
-            >
-              <span className="bg-white w-2 h-2 rounded-full animate-pulse"></span>
-              <span className="text-white/40 font-bold uppercase tracking-[0.5em] text-[7px] md:text-[9px]">Our Expertise</span>
-            </motion.div>
-            
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="hero-title text-white mb-6 md:mb-8"
             >
-              Logistics <span className="text-white/20 italic">Redefined.</span>
+              Logistics <span className="text-white/80 italic">Redefined.</span>
             </motion.h1>
             
             <motion.p 
@@ -107,7 +97,7 @@ const ServicesOverview: React.FC = () => {
                       transition={{ duration: 1.5 }}
                       src={s.image} 
                       alt={s.title} 
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                      className="w-full h-full object-cover transition-all duration-700" 
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-transparent to-transparent opacity-60"></div>
@@ -131,7 +121,7 @@ const ServicesOverview: React.FC = () => {
                 <div className="w-full lg:w-1/2">
                   <div className="mb-8">
                     <span className="text-brand-blue font-mono text-sm mb-4 block tracking-widest uppercase">{s.subtitle}</span>
-                    <h2 className="hero-title text-4xl md:text-6xl text-slate-900 tracking-tighter mb-8 italic uppercase">{s.title}</h2>
+                    <h2 className="hero-title text-4xl md:text-6xl text-slate-900 tracking-tighter mb-8 italic">{s.title}</h2>
                     <p className="text-slate-500 text-xl mb-12 leading-relaxed font-light">{s.desc}</p>
                   </div>
                   
@@ -189,7 +179,7 @@ const ServicesOverview: React.FC = () => {
                 <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-6 group-hover:bg-white group-hover:text-brand-blue transition-all duration-500">
                   {cap.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 uppercase italic tracking-tight text-white">{cap.title}</h3>
+                <h3 className="text-xl font-bold mb-4 italic tracking-tight text-white">{cap.title}</h3>
                 <p className="text-white/40 leading-relaxed font-light">{cap.desc}</p>
               </motion.div>
             ))}
@@ -204,7 +194,7 @@ const ServicesOverview: React.FC = () => {
         </div>
         
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h2 className="hero-title text-5xl md:text-8xl text-slate-900 tracking-tighter mb-8 italic uppercase">Ready to <span className="text-brand-blue">optimize?</span></h2>
+          <h2 className="hero-title text-5xl md:text-8xl text-slate-900 tracking-tighter mb-8 italic">Ready to <span className="text-brand-blue">optimize?</span></h2>
           <p className="text-xl text-slate-500 mb-12 font-light">
             Contact our team today for a custom solution tailored to your business needs in Canada.
           </p>

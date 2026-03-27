@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { ArrowRight, Shield, Clock, Globe, Truck, Warehouse, Package, BarChart3, Zap, Users2, MapPin } from 'lucide-react';
 
 const Home: React.FC = () => {
+  const [hoveredProvince, setHoveredProvince] = useState<string | null>(null);
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -65,8 +66,8 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="hero-title text-white mb-6 md:mb-8"
             >
-              Driven by Excellence. <br />
-              <span className="text-white/20 italic">Trusted by Clients.</span>
+              Excellence in <br />
+              <span className="text-white/80 italic">Canadian Logistics.</span>
             </motion.h1>
             
             <motion.p 
@@ -144,10 +145,6 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-6"
             >
-              <div className="flex items-center gap-4 mb-4 md:mb-6">
-                <div className="w-8 md:w-12 h-[1px] bg-brand-blue"></div>
-                <span className="text-brand-blue font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px]">Since 1990</span>
-              </div>
               <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-6 md:mb-10 leading-[0.9] tracking-tighter">
                 Excellence in <br/> <span className="text-slate-400">Canadian</span> Logistics
               </h2>
@@ -160,7 +157,7 @@ const Home: React.FC = () => {
                     <Shield className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1 md:mb-2 uppercase tracking-tight text-sm md:text-base">Secure Transport</h4>
+                    <h4 className="font-bold text-slate-900 mb-1 md:mb-2 tracking-tight text-sm md:text-base">Secure Transport</h4>
                     <p className="text-xs md:text-sm text-slate-500 leading-relaxed">Highest safety standards for your cargo.</p>
                   </div>
                 </div>
@@ -169,7 +166,7 @@ const Home: React.FC = () => {
                     <Clock className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1 md:mb-2 uppercase tracking-tight text-sm md:text-base">On-Time Delivery</h4>
+                    <h4 className="font-bold text-slate-900 mb-1 md:mb-2 tracking-tight text-sm md:text-base">On-Time Delivery</h4>
                     <p className="text-xs md:text-sm text-slate-500 leading-relaxed">Reliable scheduling for your supply chain.</p>
                   </div>
                 </div>
@@ -232,14 +229,7 @@ const Home: React.FC = () => {
       <section className="py-16 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-16 md:mb-24">
-            <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-brand-blue font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block"
-            >
-              How it Works
-            </motion.span>
-            <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">Our <span className="text-brand-blue/20">Process</span></h2>
+            <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">Our <span className="text-brand-blue/40">Process</span></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
@@ -286,17 +276,10 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
             <div className="max-w-2xl">
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-white/40 font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block"
-              >
-                The Inter-Citi Advantage
-              </motion.span>
-              <h2 className="hero-title text-4xl md:text-8xl text-white tracking-tighter">Why <span className="text-white/20">Choose Us?</span></h2>
+              <h2 className="hero-title text-4xl md:text-8xl text-white tracking-tighter">Why <span className="text-white/80">Choose Us?</span></h2>
               <p className="text-white/60 text-lg md:text-xl mt-8 font-medium">Dependable service. Responsive support. Confidence delivered.</p>
             </div>
-            <p className="text-white/40 text-sm md:text-base max-w-sm font-mono uppercase tracking-wider leading-relaxed">
+            <p className="text-white/40 text-sm md:text-base max-w-sm font-sans uppercase tracking-wider leading-relaxed">
               Inter-Citi Logistics is committed to delivering more than freight, we deliver confidence. Through reliable service, flexible logistics solutions, advanced technology, and a strong commitment to safety, we provide a seamless experience our customers can count on.
             </p>
           </div>
@@ -388,14 +371,7 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               className="max-w-2xl"
             >
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-slate-400 font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block"
-              >
-                Our Expertise
-              </motion.span>
-              <h2 className="hero-title text-4xl md:text-8xl text-slate-900 mb-4 md:mb-6 tracking-tighter">Core <span className="text-outline text-brand-blue">Services</span></h2>
+              <h2 className="hero-title text-4xl md:text-8xl text-slate-900 mb-4 md:mb-6 tracking-tighter">Core <span className="text-brand-blue">Services</span></h2>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -443,15 +419,8 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-center">
             <div className="lg:col-span-4">
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-white/40 font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block"
-              >
-                Client Stories
-              </motion.span>
               <h2 className="hero-title text-4xl md:text-7xl text-white mb-6 md:mb-10 leading-[0.9] tracking-tighter">
-                What Our <br/> <span className="text-white/20">Partners Say</span>
+                What Our <br/> <span className="text-white/80">Partners Say</span>
               </h2>
               <div className="flex gap-2">
                 <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-blue transition-all">
@@ -483,88 +452,190 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* National Reach Section */}
-      <section className="py-16 md:py-32 bg-white overflow-hidden relative">
+      {/* Maintenance & Safety Section */}
+      <section className="py-16 md:py-32 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-brand-blue font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block"
-              >
-                National Reach
-              </motion.span>
-              <h2 className="hero-title text-4xl md:text-8xl text-slate-900 mb-8 tracking-tighter">Location</h2>
-              <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12 max-w-md">
-                No matter where you are located, Inter-Citi Logistics provides reliable delivery solutions across Canada. From urban centres to regional and remote destinations, we ensure efficient, professional service with the responsiveness and dependability our clients expect.
+              <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-8 tracking-tighter">Maintenance</h2>
+              <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12">
+                Reliable service begins with dependable equipment. Our vehicles and trailers are maintained through a strict inspection and service schedule to ensure consistent performance, safety, and reliability.
               </p>
-              
-              <div className="space-y-6 mb-12">
-                <div className="flex flex-wrap gap-3">
-                  {['Ontario', 'Quebec', 'British Columbia', 'Alberta', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Newfoundland and Labrador', 'Prince Edward Island'].map((province, idx) => (
-                    <motion.span 
-                      key={province} 
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: idx * 0.05 }}
-                      className="px-4 py-2 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500 hover:text-brand-blue hover:border-brand-blue/30 transition-colors cursor-default"
-                    >
-                      {province}
-                    </motion.span>
-                  ))}
+              <div className="flex items-center gap-4 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue">
+                  <Shield className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 tracking-tight text-sm">Strict Inspection</h4>
+                  <p className="text-xs text-slate-500">Regular maintenance for peak performance.</p>
                 </div>
               </div>
+            </motion.div>
 
-              <div className="flex flex-wrap gap-8">
-                <div className="flex flex-col">
-                  <span className="text-3xl font-black text-brand-blue">10</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Provinces</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-3xl font-black text-brand-blue">100%</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Canadian Owned</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-3xl font-black text-brand-blue">24/7</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Operations</span>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="relative aspect-square md:aspect-video bg-slate-50 rounded-[3rem] border border-slate-100 overflow-hidden group"
+              transition={{ duration: 0.8 }}
             >
-              {/* Dot Matrix Map Visualization */}
-              <div className="absolute inset-0 p-12 grid grid-cols-20 grid-rows-10 gap-2 opacity-20">
-                {[...Array(200)].map((_, i) => (
-                  <motion.div 
-                    key={i} 
-                    initial={{ opacity: 0.2 }}
-                    whileInView={{ opacity: [0.2, 0.5, 0.2] }}
-                    transition={{ duration: 2, delay: i * 0.01, repeat: Infinity }}
-                    className="w-1 h-1 bg-brand-blue rounded-full"
-                  ></motion.div>
-                ))}
+              <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-8 tracking-tighter">Safety & Compliance</h2>
+              <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12">
+                Safety and compliance are fundamental to the way we operate. We hold our drivers to high professional standards to ensure every shipment is handled with care, responsibility, and reliability.
+              </p>
+              <div className="flex items-center gap-4 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue">
+                  <Clock className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 tracking-tight text-sm">High Standards</h4>
+                  <p className="text-xs text-slate-500">Professional drivers and strict compliance.</p>
+                </div>
               </div>
-              
-              {/* Animated Pings */}
-              <MapPing top="30%" left="20%" label="Vancouver" />
-              <MapPing top="40%" left="45%" label="Toronto" />
-              <MapPing top="35%" left="55%" label="Montreal" />
-              <MapPing top="45%" left="35%" label="Calgary" />
-              <MapPing top="38%" left="65%" label="Halifax" />
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* National Network Section */}
+      <section className="py-24 md:py-40 bg-slate-50 relative overflow-hidden">
+        {/* Background Grid */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ 
+          backgroundImage: 'radial-gradient(#002147 1px, transparent 1px)', 
+          backgroundSize: '40px 40px' 
+        }}></div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+            {/* Content Side */}
+            <div className="w-full lg:w-2/5">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/5 border border-brand-blue/10 mb-8">
+                  <Globe className="w-3 h-3 text-brand-blue" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-blue">Coast to Coast Network</span>
+                </div>
+                
+                <h2 className="hero-title text-5xl md:text-8xl text-slate-900 mb-8 tracking-tighter leading-[0.9]">
+                  National <br/> <span className="text-brand-blue">Network.</span>
+                </h2>
+                
+                <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12 font-medium">
+                  Our infrastructure spans the second-largest country in the world, connecting major economic hubs with precision and reliability.
+                </p>
+
+                <div className="grid grid-cols-2 gap-8 mb-12">
+                  <div className="space-y-1">
+                    <div className="text-4xl font-black text-slate-900">10</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Provinces Covered</div>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="text-4xl font-black text-slate-900">100%</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Canadian Owned</div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">Strategic Delivery Zones</div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Ontario', 'Quebec', 'British Columbia', 'Alberta', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Newfoundland and Labrador', 'Prince Edward Island'].map((province) => (
+                      <button
+                        key={province}
+                        onMouseEnter={() => setHoveredProvince(province)}
+                        onMouseLeave={() => setHoveredProvince(null)}
+                        className={`px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all border ${
+                          hoveredProvince === province 
+                          ? 'bg-brand-blue border-brand-blue text-white shadow-xl -translate-y-1' 
+                          : 'bg-white border-slate-200 text-slate-500 hover:border-brand-blue/30 hover:text-brand-blue'
+                        }`}
+                      >
+                        {province}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Map Side */}
+            <div className="w-full lg:w-3/5">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="relative aspect-[4/3] bg-white rounded-[3rem] border border-slate-200 shadow-2xl overflow-hidden group"
+              >
+                {/* Map Grid Overlay */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{ 
+                  backgroundImage: 'linear-gradient(#002147 1px, transparent 1px), linear-gradient(90deg, #002147 1px, transparent 1px)', 
+                  backgroundSize: '40px 40px' 
+                }}></div>
+
+                {/* Stylized Map Container */}
+                <div className="absolute inset-0 flex items-center justify-center p-12 lg:p-20">
+                  <svg viewBox="0 0 1000 600" className="w-full h-full opacity-[0.07] text-brand-blue" fill="currentColor">
+                    <path d="M150,450 L200,430 L250,460 L300,440 L350,420 L400,450 L450,430 L500,410 L550,440 L600,420 L650,400 L700,430 L750,410 L800,390 L850,420 L900,400 L950,380 L980,350 L950,300 L900,280 L850,300 L800,250 L750,280 L700,230 L650,260 L600,210 L550,240 L500,190 L450,220 L400,170 L350,200 L300,150 L250,180 L200,130 L150,160 L100,110 L50,140 L20,190 L50,240 L20,290 L50,340 L20,390 Z" />
+                  </svg>
+                </div>
+
+                {/* City Hubs - Always Visible */}
+                <CityHub top="45%" left="10%" name="Vancouver" active={hoveredProvince === 'British Columbia'} />
+                <CityHub top="50%" left="22%" name="Calgary" active={hoveredProvince === 'Alberta'} />
+                <CityHub top="42%" left="22%" name="Edmonton" active={hoveredProvince === 'Alberta'} />
+                <CityHub top="55%" left="42%" name="Winnipeg" active={hoveredProvince === 'Manitoba'} />
+                <CityHub top="70%" left="58%" name="Toronto" active={hoveredProvince === 'Ontario'} />
+                <CityHub top="68%" left="63%" name="Ottawa" active={hoveredProvince === 'Ontario'} />
+                <CityHub top="65%" left="68%" name="Montreal" active={hoveredProvince === 'Quebec'} />
+                <CityHub top="62%" left="72%" name="Quebec City" active={hoveredProvince === 'Quebec'} />
+                <CityHub top="65%" left="82%" name="Halifax" active={hoveredProvince === 'Nova Scotia'} />
+                <CityHub top="55%" left="92%" name="St. John's" active={hoveredProvince === 'Newfoundland and Labrador'} />
+
+                {/* Province Pings */}
+                <MapPing top="35%" left="15%" label="BC" active={hoveredProvince === 'British Columbia'} />
+                <MapPing top="48%" left="28%" label="AB" active={hoveredProvince === 'Alberta'} />
+                <MapPing top="52%" left="38%" label="SK" active={hoveredProvince === 'Saskatchewan'} />
+                <MapPing top="55%" left="45%" label="MB" active={hoveredProvince === 'Manitoba'} />
+                <MapPing top="65%" left="58%" label="ON" active={hoveredProvince === 'Ontario'} />
+                <MapPing top="60%" left="65%" label="QC" active={hoveredProvince === 'Quebec'} />
+                <MapPing top="58%" left="75%" label="NS" active={hoveredProvince === 'Nova Scotia'} />
+                <MapPing top="55%" left="72%" label="NB" active={hoveredProvince === 'New Brunswick'} />
+                <MapPing top="45%" left="85%" label="NL" active={hoveredProvince === 'Newfoundland and Labrador'} />
+                <MapPing top="52%" left="78%" label="PEI" active={hoveredProvince === 'Prince Edward Island'} />
+
+                {/* Floating Info Card */}
+                <AnimatePresence>
+                  {hoveredProvince && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20, x: -20 }}
+                      animate={{ opacity: 1, y: 0, x: 0 }}
+                      exit={{ opacity: 0, y: 20, x: -20 }}
+                      className="absolute bottom-8 left-8 bg-slate-900 text-white p-6 rounded-2xl shadow-2xl border border-white/10 z-30 min-w-[200px]"
+                    >
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-2">Active Region</div>
+                      <div className="text-2xl font-black mb-1">{hoveredProvince}</div>
+                      <div className="text-[10px] text-white/40 uppercase tracking-widest">Full Logistics Support</div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Scan Line Effect */}
+                <motion.div 
+                  initial={{ left: '-100%' }}
+                  animate={{ left: '200%' }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                  className="absolute inset-y-0 w-40 bg-gradient-to-r from-transparent via-brand-blue/5 to-transparent pointer-events-none"
+                ></motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -573,7 +644,7 @@ const Home: React.FC = () => {
       <section className="py-16 md:py-32 bg-brand-blue relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_70%)]"></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h2 className="hero-title text-4xl md:text-8xl text-white mb-6 md:mb-8 leading-tight tracking-tighter">Ready to Move <br/> <span className="text-white/20">Your Freight?</span></h2>
+          <h2 className="hero-title text-4xl md:text-8xl text-white mb-6 md:mb-8 leading-tight tracking-tighter">Ready to Move <br/> <span className="text-white/80">Your Freight?</span></h2>
           <p className="text-lg md:text-xl text-white/60 mb-10 md:mb-16 leading-relaxed max-w-2xl mx-auto">
             Contact Inter-Citi Logistics Canada today for a customized quote and experience the difference of professional logistics.
           </p>
@@ -646,8 +717,7 @@ const ServiceCard: React.FC<{icon: React.ReactNode, title: string, desc: string,
     className={`rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-lg border group backdrop-blur-sm ${dark ? 'bg-white/5 border-white/10' : 'bg-white border-slate-100'}`}
   >
     <div className="h-48 sm:h-64 overflow-hidden relative">
-      <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
-      <div className={`absolute inset-0 group-hover:bg-transparent transition-colors ${dark ? 'bg-slate-950/40' : 'bg-white/20'}`}></div>
+      <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
     </div>
     <div className="p-8 md:p-10">
       <div className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 transition-all ${dark ? 'bg-white/10 text-white group-hover:bg-white group-hover:text-slate-950' : 'bg-brand-blue/5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'}`}>
@@ -711,13 +781,29 @@ const TestimonialCard: React.FC<{quote: string, author: string, role: string, da
   </motion.div>
 );
 
-const MapPing: React.FC<{top: string, left: string, label: string}> = ({ top, left, label }) => (
+const CityHub: React.FC<{top: string, left: string, name: string, active?: boolean}> = ({ top, left, name, active }) => (
   <div className="absolute" style={{ top, left }}>
-    <div className="relative">
-      <div className="w-3 h-3 bg-brand-blue rounded-full relative z-10"></div>
-      <div className="absolute inset-0 w-3 h-3 bg-brand-blue rounded-full animate-ping opacity-75"></div>
-      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap">
-        <span className="text-[8px] font-bold uppercase tracking-widest text-white/40 group-hover:text-white transition-colors">{label}</span>
+    <div className="flex items-center gap-2 -translate-y-1/2">
+      <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${active ? 'bg-brand-blue scale-150' : 'bg-slate-300'}`}></div>
+      <span className={`text-[8px] font-bold uppercase tracking-widest transition-all duration-500 ${active ? 'text-brand-blue opacity-100' : 'text-slate-400 opacity-40'}`}>
+        {name}
+      </span>
+    </div>
+  </div>
+);
+
+const MapPing: React.FC<{top: string, left: string, label: string, active?: boolean}> = ({ top, left, label, active }) => (
+  <div className="absolute" style={{ top, left }}>
+    <div className={`relative group/ping transition-all duration-500 ${active ? 'scale-125 z-20' : 'z-10'}`}>
+      <div className={`w-3 h-3 rounded-full relative z-10 shadow-2xl transition-all duration-500 ${active ? 'bg-brand-accent scale-125' : 'bg-brand-blue/20 hover:bg-brand-blue/40'}`}></div>
+      <div className={`absolute inset-0 w-3 h-3 rounded-full animate-ping opacity-75 transition-colors duration-500 ${active ? 'bg-brand-accent' : 'bg-brand-blue/20'}`}></div>
+      
+      {/* Label Tooltip */}
+      <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-500 pointer-events-none ${active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+        <div className="bg-slate-900 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-2xl whitespace-nowrap border border-white/10">
+          {label}
+        </div>
+        <div className="w-2 h-2 bg-slate-900 rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2 border-r border-b border-white/10"></div>
       </div>
     </div>
   </div>

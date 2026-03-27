@@ -60,172 +60,147 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-white text-slate-900 selection:bg-brand-blue selection:text-white">
-      {/* Hero Section */}
-      <section className="relative flex items-center overflow-hidden border-b border-white/5 px-6 lg:px-10 bg-brand-blue">
-        <motion.div 
-          style={{ opacity, scale }}
-          className="absolute inset-0 z-0"
-        >
+      {/* Hero Section - Split Layout */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-brand-blue">
+        <div className="absolute inset-0 z-0 lg:w-1/2">
           <img 
             src="https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=2000" 
             alt="Logistics Background" 
-            className="w-full h-full object-cover opacity-30 grayscale"
+            className="w-full h-full object-cover opacity-40 grayscale"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/20 via-brand-blue/60 to-brand-blue"></div>
-        </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/0 via-brand-blue/40 to-brand-blue"></div>
+        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full pt-40 pb-20 md:pt-56 md:pb-32">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex items-center gap-3 mb-8 md:mb-12"
-          >
-            <span className="bg-white w-2 h-2 rounded-full animate-pulse"></span>
-            <span className="text-white/40 font-bold uppercase tracking-[0.5em] text-[7px] md:text-[9px]">Inter-Citi Logistics Canada</span>
-          </motion.div>
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-10 pt-40 pb-20 md:pt-56 md:pb-32 flex flex-col lg:flex-row items-center gap-16">
+          <div className="lg:w-1/2 lg:pl-12 order-2 lg:order-1">
+            <motion.h1 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="hero-title text-white mb-8"
+            >
+              Our Heritage. <br/>
+              Your Future.
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-white/60 text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-light"
+            >
+              Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over three decades of excellence, engineered for the modern world.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex items-center gap-8"
+            >
+              <div className="flex flex-col">
+                <span className="text-4xl font-black text-white">30+</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/40">Years Experience</span>
+              </div>
+              <div className="w-px h-12 bg-white/10"></div>
+              <div className="flex flex-col">
+                <span className="text-4xl font-black text-white">100%</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/40">Canadian Owned</span>
+              </div>
+            </motion.div>
+          </div>
           
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="hero-title text-white mb-6 md:mb-8"
-          >
-            Our <span className="text-white/20 italic">Heritage.</span> <br/>
-            Your <span className="text-white/20">Future.</span>
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="hero-subtitle text-white/60 mb-8 md:mb-12 max-w-3xl"
-          >
-            Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over the years, we have earned a reputation for dependable service, fast turnaround times, and professional support.
-          </motion.p>
+          <div className="lg:w-1/2 relative order-1 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative aspect-square rounded-[4rem] overflow-hidden border-[12px] border-white/5 shadow-2xl"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" 
+                alt="Modern Warehouse" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-brand-blue/20"></div>
+            </motion.div>
+            
+            {/* Floating Badge */}
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2.5rem] shadow-2xl hidden md:block"
+            >
+              <Award className="w-10 h-10 text-brand-blue mb-4" />
+              <div className="text-xs font-black uppercase tracking-widest text-slate-900">Est. 1990</div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Narrative Section */}
+      {/* Narrative Section - Editorial Layout */}
       <section className="py-24 md:py-48 relative overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-32 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-5"
+              className="lg:col-span-6"
             >
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-brand-blue font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-6 block"
-              >
-                The Story
-              </motion.span>
-              <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter mb-12">
-                Three Decades of <br/> <span className="text-brand-blue italic">Relentless Service.</span>
+              <div className="text-brand-blue font-black text-sm uppercase tracking-[0.4em] mb-8">The Inter-Citi Story</div>
+              <h2 className="hero-title text-slate-900 mb-12">
+                Three Decades of <br/> <span className="text-slate-400 italic">Relentless</span> <br/> Service.
               </h2>
-              <div className="space-y-8 text-slate-500 text-lg leading-relaxed">
+              <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-light">
                 <p>
                   Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over the years, we have earned a reputation for dependable service, fast turnaround times, and professional support.
                 </p>
                 <p>
                   With one- and two-day delivery, an established transportation network, and extensive industry expertise, we provide logistics solutions that are efficient, flexible, and reliable.
                 </p>
-                <p>
-                  Our goal is simple: to make every delivery seamless and every customer experience dependable. At the heart of everything we do is a commitment to precision, safety, and customer satisfaction.
-                </p>
               </div>
             </motion.div>
 
-            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="p-10 bg-slate-50 border border-slate-100 rounded-[2.5rem] hover:bg-slate-100 transition-colors group"
-              >
-                <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue mb-8 group-hover:bg-brand-blue group-hover:text-white transition-all duration-500">
-                  <Target className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
-                <p className="text-slate-500 text-sm leading-relaxed italic">
-                  "Delivering quality with every mile. To provide efficient, quality-driven logistics solutions with customer satisfaction at the center of everything we do."
-                </p>
-              </motion.div>
+            <div className="lg:col-span-6">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
+                <div className="relative space-y-8">
+                  <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="p-12 bg-slate-50 border border-slate-100 rounded-[3rem] hover:bg-white hover:shadow-2xl transition-all duration-500 group"
+                  >
+                    <div className="flex items-center gap-6 mb-8">
+                      <div className="w-14 h-14 bg-brand-blue text-white rounded-2xl flex items-center justify-center shadow-lg">
+                        <Target className="w-7 h-7" />
+                      </div>
+                      <h3 className="text-3xl font-black text-slate-900 tracking-tight">Our Mission</h3>
+                    </div>
+                    <p className="text-slate-500 text-lg leading-relaxed italic font-light">
+                      "Delivering quality with every mile. To provide efficient, quality-driven logistics solutions with customer satisfaction at the center of everything we do."
+                    </p>
+                  </motion.div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="p-10 bg-slate-50 border border-slate-100 rounded-[2.5rem] hover:bg-slate-100 transition-colors group md:mt-12"
-              >
-                <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue mb-8 group-hover:bg-brand-blue group-hover:text-white transition-all duration-500">
-                  <TrendingUp className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Values</h3>
-                <p className="text-slate-500 text-sm leading-relaxed italic">
-                  "The principles that move us forward."
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Spotlight */}
-      <section className="py-24 md:py-48 bg-brand-blue relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
-                  alt="Our Founder" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                />
-              </div>
-              <div className="absolute -bottom-10 -right-10 bg-white p-12 rounded-[2.5rem] shadow-2xl text-slate-950 max-w-xs hidden md:block">
-                 <h4 className="hero-title text-2xl mb-1 uppercase tracking-tighter">Our Founder</h4>
-                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">President & Founder</p>
-              </div>
-            </motion.div>
-
-            <div>
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-white/40 font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-6 block"
-              >
-                Leadership
-              </motion.span>
-              <h2 className="hero-title text-4xl md:text-8xl text-white tracking-tighter mb-12">
-                Visionary <br/> <span className="text-white/20 italic">Guidance.</span>
-              </h2>
-              <div className="space-y-8 text-white/50 text-lg leading-relaxed">
-                <p>
-                  Inter-Citi Logistics was established in 1990 after identifying a critical gap in industry-specific logistics. Our journey is defined by a relentless commitment to community and excellence.
-                </p>
-                <p>
-                  Our leadership integrates high-level strategy with a deep sense of integrity, backed by over three decades of industry experience and a passion for service.
-                </p>
-                <div className="pt-8 flex flex-wrap gap-6">
-                  <div className="flex items-center gap-3">
-                    <Award className="text-white/40 w-5 h-5" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">Award-Winning Service</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <History className="text-white/40 w-5 h-5" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">30+ Years Experience</span>
-                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="p-12 bg-brand-blue text-white rounded-[3rem] shadow-2xl group"
+                  >
+                    <div className="flex items-center gap-6 mb-8">
+                      <div className="w-14 h-14 bg-white text-brand-blue rounded-2xl flex items-center justify-center shadow-lg">
+                        <TrendingUp className="w-7 h-7" />
+                      </div>
+                      <h3 className="text-3xl font-black tracking-tight">Our Vision</h3>
+                    </div>
+                    <p className="text-white/60 text-lg leading-relaxed italic font-light">
+                      "To be the most trusted name in Canadian logistics, setting the standard for reliability and service excellence through innovation and integrity."
+                    </p>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -237,13 +212,6 @@ const About: React.FC = () => {
       <section className="py-24 md:py-48 bg-white relative overflow-hidden border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-16">
-            <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-brand-blue font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-6 block"
-            >
-              Testimonials
-            </motion.span>
             <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">
               Trusted by <br/> <span className="text-brand-blue italic">Industry Leaders.</span>
             </h2>
@@ -297,14 +265,14 @@ const About: React.FC = () => {
       <section className="py-24 md:py-48 bg-brand-blue">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-24">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="hero-title text-4xl md:text-8xl text-white tracking-tighter"
-            >
-              Core <span className="text-white/20 italic">Values.</span>
-            </motion.h2>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="hero-title text-4xl md:text-8xl text-white tracking-tighter"
+              >
+                Core <span className="text-white/80 italic">Values.</span>
+              </motion.h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
             <ValueCard icon={<Users />} title="Our Service" body="We are committed to operating with efficiency, professionalism, and full compliance with all rules and regulations. Every shipment is handled with care, accuracy, and accountability." delay={0.1} />
@@ -321,13 +289,6 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-brand-blue font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-6 block"
-              >
-                Infrastructure
-              </motion.span>
               <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter mb-12">
                 Safety & <br/> <span className="text-brand-blue italic">Compliance.</span>
               </h2>
@@ -347,7 +308,7 @@ const About: React.FC = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <img src="https://images.unsplash.com/photo-1591768793355-74d7c869c3b7?auto=format&fit=crop&q=80&w=600" className="rounded-[2rem] grayscale hover:grayscale-0 transition-all duration-500" alt="Fleet Safety" />
+                <img src="https://images.unsplash.com/photo-1591768793355-74d7c869c3b7?auto=format&fit=crop&q=80&w=600" className="rounded-[2rem] transition-all duration-500" alt="Fleet Safety" />
                 <div className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem]">
                   <h4 className="text-slate-900 font-bold uppercase text-[10px] tracking-widest mb-2">Compliance</h4>
                   <p className="text-slate-500 text-xs">Rigid auditing for absolute safety compliance.</p>
@@ -358,7 +319,7 @@ const About: React.FC = () => {
                   <h4 className="font-bold uppercase text-[10px] tracking-widest mb-2">Training</h4>
                   <p className="text-white/80 text-xs">Continuous driver safety updates.</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1501700493717-9c99da9ff053?auto=format&fit=crop&q=80&w=600" className="rounded-[2rem] grayscale hover:grayscale-0 transition-all duration-500" alt="Fleet Modernization" />
+                <img src="https://images.unsplash.com/photo-1501700493717-9c99da9ff053?auto=format&fit=crop&q=80&w=600" className="rounded-[2rem] transition-all duration-500" alt="Fleet Modernization" />
               </div>
             </div>
           </div>
@@ -369,15 +330,8 @@ const About: React.FC = () => {
       <section className="py-24 md:py-48 bg-brand-blue relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-24">
-            <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-white/40 font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-6 block"
-            >
-              Support
-            </motion.span>
             <h2 className="hero-title text-4xl md:text-8xl text-white tracking-tighter">
-              Common <span className="text-white/20 italic">Questions.</span>
+              Common <span className="text-white/80 italic">Questions.</span>
             </h2>
           </div>
 

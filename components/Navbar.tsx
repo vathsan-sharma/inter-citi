@@ -51,16 +51,10 @@ const Navbar: React.FC = () => {
 
         {/* Right Buttons */}
         <div className="hidden lg:flex items-center gap-3 flex-1 justify-end">
-          <button className="bg-white text-brand-blue px-5 py-2.5 rounded-xl font-bold text-[9px] uppercase tracking-widest flex items-center gap-2 hover:bg-slate-100 transition-all shadow-lg group">
-            Tracking
-            <div className="w-4 h-4 bg-brand-blue rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-              <ArrowRight className="w-2.5 h-2.5 text-white" />
-            </div>
-          </button>
-          <Link to="/contact" className="bg-brand-blue text-white px-5 py-2.5 rounded-xl font-bold text-[9px] uppercase tracking-widest flex items-center gap-2 hover:bg-brand-accent transition-all shadow-lg group">
-            Contact
-            <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-              <ArrowRight className="w-2.5 h-2.5 text-brand-blue" />
+          <Link to="/contact" className="bg-brand-blue text-white px-6 py-3 rounded-xl font-bold text-[10px] uppercase tracking-widest flex items-center gap-2 hover:bg-brand-accent transition-all shadow-lg group">
+            Get a Quote
+            <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+              <ArrowRight className="w-3 h-3 text-brand-blue" />
             </div>
           </Link>
         </div>
@@ -94,11 +88,8 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <div className="pt-4 md:pt-6 border-t border-white/10 flex flex-col gap-3 md:gap-4">
-              <button className="bg-white text-brand-blue py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-widest">
-                Tracking Package
-              </button>
-              <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-white/10 text-white py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-widest text-center border border-white/10">
-                Get In touch with us
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-white text-brand-blue py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-widest text-center shadow-xl">
+                Get a Quote
               </Link>
             </div>
           </div>
