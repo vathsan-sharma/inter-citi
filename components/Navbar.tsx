@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
             <img 
               src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(30).png" 
               alt="Inter-Citi Logistics" 
-              className="h-8 md:h-12 w-auto object-contain"
+              className="h-14 md:h-24 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </Link>

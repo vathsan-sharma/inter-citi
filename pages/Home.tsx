@@ -4,6 +4,33 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { ArrowRight, Shield, Clock, Globe, Truck, Warehouse, Package, BarChart3, Zap, Users2, MapPin } from 'lucide-react';
 
+
+const Counter: React.FC<{ value: string, label: string, delay?: number }> = ({ value, label, delay = 0 }) => {
+  const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
+  const suffix = value.replace(/[0-9.]/g, '');
+  
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay }}
+      className="flex flex-col items-center md:items-end"
+    >
+      <div className="text-2xl md:text-4xl font-black text-white tracking-tight mb-1 flex items-baseline">
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          {value}
+        </motion.span>
+      </div>
+      <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 text-center md:text-right">{label}</span>
+    </motion.div>
+  );
+};
+
 const Home: React.FC = () => {
   const [hoveredProvince, setHoveredProvince] = useState<string | null>(null);
   const { scrollYProgress } = useScroll();
@@ -64,19 +91,18 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="hero-title text-white mb-6 md:mb-8"
+              className="text-5xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.9]"
             >
-              Excellence in <br />
-              <span className="text-white/80 italic">Canadian Logistics.</span>
+              Inter-Citi <span className="text-white/80 italic">Logistics.</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="hero-subtitle text-white/80 mb-8 md:mb-12 max-w-lg"
+              className="text-2xl md:text-4xl font-light text-white/90 mb-12 tracking-tight"
             >
-              Built on precision, reliability, and service excellence, we deliver logistics solutions our clients can count on — every mile, every shipment, every time.
+              Excellence in Canadian Logistics
             </motion.p>
 
             <motion.div
@@ -99,18 +125,9 @@ const Home: React.FC = () => {
         {/* Bottom Stats & Controls */}
         <div className="absolute bottom-8 md:bottom-16 left-6 md:left-10 right-6 md:left-10 z-10 flex flex-col md:flex-row items-center md:items-end justify-end gap-6 md:gap-8">
           <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12 w-full md:w-auto">
-            <div className="flex flex-col items-center md:items-end">
-              <span className="text-2xl md:text-4xl font-black text-white tracking-tight mb-1">25+</span>
-              <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 text-center md:text-right">Years of Expertise</span>
-            </div>
-            <div className="flex flex-col items-center md:items-end">
-              <span className="text-2xl md:text-4xl font-black text-white tracking-tight mb-1">1.2M+</span>
-              <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 text-center md:text-right">Successful Deliveries</span>
-            </div>
-            <div className="flex flex-col items-center md:items-end">
-              <span className="text-2xl md:text-4xl font-black text-white tracking-tight mb-1">180+</span>
-              <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 text-center md:text-right">Global Destinations</span>
-            </div>
+            <Counter value="35+" label="Years of Expertise" delay={0.4} />
+            <Counter value="1.2M+" label="Successful Deliveries" delay={0.5} />
+            <Counter value="10+" label="Provinces Covered" delay={0.6} />
           </div>
         </div>
       </section>
@@ -198,30 +215,11 @@ const Home: React.FC = () => {
                 transition={{ delay: 0.5 }}
                 className="absolute -bottom-6 md:-bottom-10 -right-4 md:-right-10 bg-brand-blue p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] text-white shadow-2xl"
               >
-                <div className="text-4xl md:text-6xl font-black mb-1 tracking-tighter">30+</div>
+                <div className="text-4xl md:text-6xl font-black mb-1 tracking-tighter">35+</div>
                 <div className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] opacity-50">Years of Trust</div>
               </motion.div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Marquee Section */}
-      <section className="py-10 bg-brand-blue border-y border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-8">
-          <span className="text-white/40 font-bold uppercase tracking-[0.4em] text-[7px] md:text-[8px] block text-center">Trusted by Industry Leaders</span>
-        </div>
-        <div className="flex whitespace-nowrap animate-marquee">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center gap-12 md:gap-24 mx-6 md:mx-12">
-              <LogoPlaceholder name="Global Logistics" />
-              <LogoPlaceholder name="North Star" />
-              <LogoPlaceholder name="Swift Cargo" />
-              <LogoPlaceholder name="Oceanic" />
-              <LogoPlaceholder name="Summit" />
-              <LogoPlaceholder name="Prime" />
-            </div>
-          ))}
         </div>
       </section>
 
@@ -296,7 +294,6 @@ const Home: React.FC = () => {
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white group-hover:bg-white group-hover:text-brand-blue transition-all duration-500">
                   <Globe className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="font-mono text-white/20 text-xs">01 // NETWORK</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Nationwide Reach</h3>
               <p className="text-white/50 text-sm leading-relaxed mb-8">
@@ -321,7 +318,6 @@ const Home: React.FC = () => {
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white group-hover:bg-white group-hover:text-brand-blue transition-all duration-500">
                   <BarChart3 className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="font-mono text-white/20 text-xs">02 // TECH</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Advanced Visibility</h3>
               <p className="text-white/50 text-sm leading-relaxed mb-8">
@@ -346,7 +342,6 @@ const Home: React.FC = () => {
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white group-hover:bg-white group-hover:text-brand-blue transition-all duration-500">
                   <Zap className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="font-mono text-white/20 text-xs">03 // SOLUTIONS</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Responsive Delivery</h3>
               <p className="text-white/50 text-sm leading-relaxed mb-8">
@@ -388,7 +383,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             <ServiceCard 
               icon={<Truck className="w-6 h-6 md:w-8 md:h-8" />}
-              title="Express Courier"
+              title="Express Courier Services"
               desc="Fast and reliable courier solutions for your most urgent shipments across Canada."
               image="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/08.jpg"
               delay={0.1}
@@ -396,7 +391,7 @@ const Home: React.FC = () => {
             />
             <ServiceCard 
               icon={<Warehouse className="w-6 h-6 md:w-8 md:h-8" />}
-              title="Warehousing"
+              title="Warehousing and Distribution"
               desc="Secure, climate-controlled storage and efficient distribution management."
               image="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/07.jpg"
               delay={0.2}
@@ -404,7 +399,7 @@ const Home: React.FC = () => {
             />
             <ServiceCard 
               icon={<Package className="w-6 h-6 md:w-8 md:h-8" />}
-              title="Last Mile"
+              title="Last Mile Solutions"
               desc="The final link in your supply chain, delivered with precision to your customer's doorstep."
               image="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/09.jpg"
               delay={0.3}
@@ -414,89 +409,40 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 md:py-32 bg-brand-blue relative overflow-hidden">
+      {/* Client Reviews Section */}
+      <section className="py-24 md:py-48 bg-white relative overflow-hidden border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-center">
-            <div className="lg:col-span-4">
-              <h2 className="hero-title text-4xl md:text-7xl text-white mb-6 md:mb-10 leading-[0.9] tracking-tighter">
-                What Our <br/> <span className="text-white/80">Partners Say</span>
-              </h2>
-              <div className="flex gap-2">
-                <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-blue transition-all">
-                  <ArrowRight className="w-4 h-4 rotate-180" />
-                </button>
-                <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-blue transition-all">
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-            
-            <div className="lg:col-span-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <TestimonialCard 
-                  quote="Inter-Citi has transformed our supply chain. Their reliability and real-time tracking are game-changers for our retail operations."
-                  author="Sarah Jenkins"
-                  role="Logistics Director, RetailCo"
-                  dark={true}
-                />
-                <TestimonialCard 
-                  quote="The level of professionalism and care they show for our high-value medical equipment is exceptional. Truly a trusted partner."
-                  author="Michael Chen"
-                  role="Operations Manager, MedTech Solutions"
-                  dark={true}
-                />
-              </div>
-            </div>
+          <div className="text-center mb-24">
+            <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">
+              What Our <span className="text-brand-blue italic">Partners Say.</span>
+            </h2>
           </div>
-        </div>
-      </section>
 
-      {/* Maintenance & Safety Section */}
-      <section className="py-16 md:py-32 bg-slate-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-8 tracking-tighter">Maintenance</h2>
-              <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12">
-                Reliable service begins with dependable equipment. Our vehicles and trailers are maintained through a strict inspection and service schedule to ensure consistent performance, safety, and reliability.
-              </p>
-              <div className="flex items-center gap-4 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue">
-                  <Shield className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 tracking-tight text-sm">Strict Inspection</h4>
-                  <p className="text-xs text-slate-500">Regular maintenance for peak performance.</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-8 tracking-tighter">Safety & Compliance</h2>
-              <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12">
-                Safety and compliance are fundamental to the way we operate. We hold our drivers to high professional standards to ensure every shipment is handled with care, responsibility, and reliability.
-              </p>
-              <div className="flex items-center gap-4 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue">
-                  <Clock className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 tracking-tight text-sm">High Standards</h4>
-                  <p className="text-xs text-slate-500">Professional drivers and strict compliance.</p>
-                </div>
-              </div>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <TestimonialCard 
+              quote="Inter-Citi Logistics has been a reliable partner for our business for several years. Their commitment to timely deliveries and professional service is unmatched. We highly recommend them for any logistics needs."
+              author="Oviya J"
+              role="Operations Manager"
+              delay={0.1}
+            />
+            <TestimonialCard 
+              quote="The team at Inter-Citi is exceptional. They handle our warehousing and distribution with precision, ensuring our products reach our customers on time, every time. Their attention to detail is impressive."
+              author="Tulshi Patel"
+              role="Supply Chain Director"
+              delay={0.2}
+            />
+            <TestimonialCard 
+              quote="We've worked with many logistics companies, but Inter-Citi stands out for their reliability and customer support. Their 24/7 dispatch team is always available to help, making our logistics operations seamless."
+              author="Abdulhaqq Bello"
+              role="Logistics Coordinator"
+              delay={0.3}
+            />
+            <TestimonialCard 
+              quote="Inter-Citi's last mile solutions have significantly improved our delivery times and customer satisfaction. Their professional drivers and real-time tracking provide peace of mind for our time-critical shipments."
+              author="Ravi Siva"
+              role="E-commerce Manager"
+              delay={0.4}
+            />
           </div>
         </div>
       </section>
@@ -519,11 +465,6 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/5 border border-brand-blue/10 mb-8">
-                  <Globe className="w-3 h-3 text-brand-blue" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-blue">Coast to Coast Network</span>
-                </div>
-                
                 <h2 className="hero-title text-5xl md:text-8xl text-slate-900 mb-8 tracking-tighter leading-[0.9]">
                   National <br/> <span className="text-brand-blue">Network.</span>
                 </h2>
@@ -532,19 +473,22 @@ const Home: React.FC = () => {
                   Our infrastructure spans the second-largest country in the world, connecting major economic hubs with precision and reliability.
                 </p>
 
-                <div className="grid grid-cols-2 gap-8 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
                   <div className="space-y-1">
-                    <div className="text-4xl font-black text-slate-900">10</div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Provinces Covered</div>
+                    <div className="text-4xl font-black text-slate-900">35+</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Years of Expertise</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-4xl font-black text-slate-900">100%</div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Canadian Owned</div>
+                    <div className="text-4xl font-black text-slate-900">1.2M+</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Deliveries</div>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="text-4xl font-black text-slate-900">10+</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Provinces</div>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">Strategic Delivery Zones</div>
                   <div className="flex flex-wrap gap-2">
                     {['Ontario', 'Quebec', 'British Columbia', 'Alberta', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Newfoundland and Labrador', 'Prince Edward Island'].map((province) => (
                       <button

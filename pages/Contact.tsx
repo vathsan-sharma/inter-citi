@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="hero-subtitle text-white/60 mb-8 md:mb-12 max-w-2xl"
             >
-              Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Experience why companies across Canada depend on us to keep their business in motion.
+              Experience why companies across Canada depend on us to keep their business in motion.
             </motion.p>
           </motion.div>
         </div>
@@ -240,7 +240,6 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="absolute top-0 right-0 p-6 md:p-8 border-r border-t border-slate-200 rounded-tr-3xl backdrop-blur-sm bg-white/40 text-right z-20">
-              <div className="text-[10px] font-mono text-brand-blue uppercase tracking-widest mb-4">Provinces We Deliver To</div>
               <div className="flex flex-col gap-2 items-end">
                 {['Ontario', 'Quebec', 'British Columbia', 'Alberta', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Newfoundland and Labrador', 'Prince Edward Island'].map((province) => (
                   <button 
@@ -258,7 +257,6 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="absolute bottom-0 right-0 p-6 md:p-8 border-r border-b border-slate-200 rounded-br-3xl backdrop-blur-sm bg-white/40 text-right z-20">
-              <div className="text-[10px] font-mono text-brand-blue uppercase tracking-widest mb-2">Global Sync</div>
               <div className="text-2xl font-black text-slate-900 uppercase tracking-tight">24/7 Ops</div>
               <div className="mt-4 text-[10px] font-mono text-slate-400">LAT: 56.1304° N // LONG: 106.3468° W</div>
             </div>

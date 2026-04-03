@@ -3,6 +3,20 @@ import React, { useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { Shield, Target, Users, CheckCircle, Award, History, TrendingUp, Heart, Plus, Minus, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
+
+const Counter: React.FC<{ value: string, label: string, delay?: number }> = ({ value, label, delay = 0 }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay }}
+    className="flex flex-col"
+  >
+    <span className="text-4xl font-black text-white">{value}</span>
+    <span className="text-[10px] uppercase tracking-widest text-white/40">{label}</span>
+  </motion.div>
+);
+
 const About: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -39,7 +53,7 @@ const About: React.FC = () => {
     },
     {
       question: "How long has Inter-Citi Logistics been in business?",
-      answer: "Inter-Citi Logistics Canada was established in 1990. We have over three decades of experience in the logistics and transportation industry."
+      answer: "Inter-Citi Logistics Canada was established in 1990. We have over 35 years of experience in the logistics and transportation industry."
     },
     {
       question: "What types of services do you offer?",
@@ -51,7 +65,7 @@ const About: React.FC = () => {
     },
     {
       question: "What makes Inter-Citi different from other providers?",
-      answer: "Our heritage of over 30 years, our strategic 30,000 sq ft climate-controlled facility in Scarborough, and our relentless commitment to customer satisfaction through 24/7 dispatch support set us apart."
+      answer: "Our heritage of over 35 years, our strategic 30,000 sq ft climate-controlled facility in Scarborough, and our relentless commitment to customer satisfaction through 24/7 dispatch support set us apart."
     }
   ];
 
@@ -89,7 +103,7 @@ const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-white/60 text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-light"
             >
-              Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over three decades of excellence, engineered for the modern world.
+              Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over 35 years of excellence, engineered for the modern world.
             </motion.p>
 
             <motion.div
@@ -98,15 +112,11 @@ const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex items-center gap-8"
             >
-              <div className="flex flex-col">
-                <span className="text-4xl font-black text-white">30+</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Years Experience</span>
-              </div>
+              <Counter value="35+" label="Years of Expertise" delay={0.4} />
               <div className="w-px h-12 bg-white/10"></div>
-              <div className="flex flex-col">
-                <span className="text-4xl font-black text-white">100%</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Canadian Owned</span>
-              </div>
+              <Counter value="1.2M+" label="Deliveries" delay={0.5} />
+              <div className="w-px h-12 bg-white/10"></div>
+              <Counter value="10+" label="Provinces" delay={0.6} />
             </motion.div>
           </div>
           
@@ -149,13 +159,12 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-6"
             >
-              <div className="text-brand-blue font-black text-sm uppercase tracking-[0.4em] mb-8">The Inter-Citi Story</div>
               <h2 className="hero-title text-slate-900 mb-12">
-                Three Decades of <br/> <span className="text-slate-400 italic">Relentless</span> <br/> Service.
+                35+ Years of <br/> <span className="text-slate-400 italic">Relentless</span> <br/> Service.
               </h2>
               <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-light">
                 <p>
-                  Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over the years, we have earned a reputation for dependable service, fast turnaround times, and professional support.
+                  Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over 35 years of excellence, we have earned a reputation for dependable service, fast turnaround times, and professional support.
                 </p>
                 <p>
                   With one- and two-day delivery, an established transportation network, and extensive industry expertise, we provide logistics solutions that are efficient, flexible, and reliable.
@@ -208,55 +217,57 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonial Slider */}
-      <section className="py-24 md:py-48 bg-white relative overflow-hidden border-b border-slate-100">
+      {/* Founder Section */}
+      <section className="py-24 md:py-48 bg-slate-50 relative overflow-hidden border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-16">
-            <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">
-              Trusted by <br/> <span className="text-brand-blue italic">Industry Leaders.</span>
-            </h2>
-          </div>
-
-          <div className="relative max-w-4xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTestimonial}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.5 }}
-                className="bg-slate-50 border border-slate-100 p-10 md:p-16 rounded-[3rem] text-center"
-              >
-                <Quote className="w-12 h-12 text-brand-blue mx-auto mb-8 opacity-20" />
-                <p className="text-xl md:text-3xl text-slate-600 leading-relaxed mb-12 italic font-light">
-                  "{testimonials[currentTestimonial].quote}"
-                </p>
-                <div className="flex flex-col items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-5"
+            >
+              <div className="relative">
+                <div className="absolute -inset-4 bg-brand-blue/10 rounded-[3rem] blur-2xl"></div>
+                <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white">
                   <img 
-                    src={testimonials[currentTestimonial].image} 
-                    alt={testimonials[currentTestimonial].author}
-                    className="w-16 h-16 rounded-full mb-4 grayscale"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
+                    alt="Kula Sellathurai" 
+                    className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   />
-                  <h4 className="text-slate-900 font-bold uppercase tracking-widest text-sm">{testimonials[currentTestimonial].author}</h4>
-                  <p className="text-slate-400 text-[10px] uppercase tracking-[0.2em]">{testimonials[currentTestimonial].role}</p>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+                {/* Floating Badge */}
+                <div className="absolute -bottom-6 -right-6 bg-brand-blue text-white p-6 rounded-2xl shadow-xl">
+                  <div className="text-[10px] font-bold uppercase tracking-widest opacity-60 mb-1">President</div>
+                  <div className="font-bold">Kula Sellathurai</div>
+                </div>
+              </div>
+            </motion.div>
 
-            <div className="flex justify-center gap-4 mt-12">
-              <button 
-                onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors text-slate-900"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button 
-                onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors text-slate-900"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-7"
+            >
+              <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-8 tracking-tighter">
+                Meet Our <br/> <span className="text-brand-blue italic">Founder.</span>
+              </h2>
+              <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+                <p className="font-bold text-slate-900 text-xl">Kula Sellathurai — President of Inter-Citi Logistics</p>
+                <p>
+                  Kula Sellathurai is the President of Inter-Citi Logistics and a respected entrepreneur with decades of business leadership experience. He founded Inter-Citi Logistics in 1990 after recognizing a market need for industry-specific logistics solutions, and has since played a key role in building the company into a trusted logistics provider in Canada.
+                </p>
+                <p>
+                  Beyond his leadership at Inter-Citi Logistics, Kula has held several prominent roles in business and community organizations, including President of the Canada Sri Lanka Business Convention, President of the Sri Lanka Canada Business Council, Deputy Secretary General of the Global Federation of Sri Lankan Business Councils, and Past President of the Canadian Tamil Chamber of Commerce.
+                </p>
+                <p>
+                  His accomplishments have been recognized through numerous honours, including the Her Majesty Queen Elizabeth II Diamond Jubilee Medal, the Her Majesty Queen Elizabeth II Platinum Jubilee Medal, the His Majesty King Charles III Coronation Medal, and recognition as one of the Top 25 South Asian Entrepreneurs in Canada.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -274,11 +285,10 @@ const About: React.FC = () => {
                 Core <span className="text-white/80 italic">Values.</span>
               </motion.h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
             <ValueCard icon={<Users />} title="Our Service" body="We are committed to operating with efficiency, professionalism, and full compliance with all rules and regulations. Every shipment is handled with care, accuracy, and accountability." delay={0.1} />
             <ValueCard icon={<Target />} title="Our People" body="Our people are the foundation of our success. We value our partners, support our employees, and foster a workplace built on respect, reliability, and performance." delay={0.2} />
             <ValueCard icon={<Heart />} title="Our Community" body="Giving back is part of who we are. We take pride in supporting and volunteering within our community, building connections that extend beyond logistics." delay={0.3} />
-            <ValueCard icon={<Shield />} title="Maintenance" body="Reliable service begins with dependable equipment. Our vehicles and trailers are maintained through a strict inspection and service schedule to ensure consistent performance, safety, and reliability." delay={0.4} />
           </div>
         </div>
       </section>
@@ -290,15 +300,15 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>
               <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter mb-12">
-                Safety & <br/> <span className="text-brand-blue italic">Compliance.</span>
+                Safety, Compliance & <br/> <span className="text-brand-blue italic">Maintenance.</span>
               </h2>
               <p className="text-slate-500 text-xl leading-relaxed mb-12">
-                Safety and compliance are fundamental to the way we operate. We hold our drivers to high professional standards to ensure every shipment is handled with care, responsibility, and reliability.
+                Safety and compliance are fundamental to the way we operate. We hold our drivers and equipment to high professional standards to ensure every shipment is handled with care, responsibility, and reliability.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <div className="text-4xl font-black text-slate-900 mb-2 tracking-tighter">30K</div>
-                  <div className="text-[8px] font-bold uppercase tracking-[0.3em] text-slate-400">Square Feet</div>
+                  <div className="text-4xl font-black text-slate-900 mb-2 tracking-tighter">35+</div>
+                  <div className="text-[8px] font-bold uppercase tracking-[0.3em] text-slate-400">Years of Experience</div>
                 </div>
                 <div>
                   <div className="text-4xl font-black text-slate-900 mb-2 tracking-tighter">24/7</div>
@@ -308,7 +318,12 @@ const About: React.FC = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <img src="https://images.unsplash.com/photo-1591768793355-74d7c869c3b7?auto=format&fit=crop&q=80&w=600" className="rounded-[2rem] transition-all duration-500" alt="Fleet Safety" />
+                <img 
+                  src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/factory-worker-holding-clipboard-checking-inventory-warehouse-storage-department.jpg" 
+                  className="rounded-[2rem] transition-all duration-500 shadow-2xl" 
+                  alt="Safety and Compliance" 
+                  referrerPolicy="no-referrer"
+                />
                 <div className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem]">
                   <h4 className="text-slate-900 font-bold uppercase text-[10px] tracking-widest mb-2">Compliance</h4>
                   <p className="text-slate-500 text-xs">Rigid auditing for absolute safety compliance.</p>
@@ -316,10 +331,15 @@ const About: React.FC = () => {
               </div>
               <div className="space-y-4 pt-12">
                 <div className="p-8 bg-brand-blue rounded-[2rem] text-white">
-                  <h4 className="font-bold uppercase text-[10px] tracking-widest mb-2">Training</h4>
-                  <p className="text-white/80 text-xs">Continuous driver safety updates.</p>
+                  <h4 className="font-bold uppercase text-[10px] tracking-widest mb-2">Maintenance</h4>
+                  <p className="text-white/80 text-xs">Strict inspection and service schedules.</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1501700493717-9c99da9ff053?auto=format&fit=crop&q=80&w=600" className="rounded-[2rem] transition-all duration-500" alt="Fleet Modernization" />
+                <img 
+                  src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/modern-automobile-mechanic-composition.jpg" 
+                  className="rounded-[2rem] transition-all duration-500 shadow-2xl" 
+                  alt="Maintenance" 
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </div>
           </div>
