@@ -219,56 +219,30 @@ const About: React.FC = () => {
 
       {/* Founder Section */}
       <section className="py-24 md:py-48 bg-slate-50 relative overflow-hidden border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-5"
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-brand-blue/10 rounded-[3rem] blur-2xl"></div>
-                <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white">
-                  <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
-                    alt="Kula Sellathurai" 
-                    className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  />
-                </div>
-                {/* Floating Badge */}
-                <div className="absolute -bottom-6 -right-6 bg-brand-blue text-white p-6 rounded-2xl shadow-xl">
-                  <div className="text-[10px] font-bold uppercase tracking-widest opacity-60 mb-1">President</div>
-                  <div className="font-bold">Kula Sellathurai</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-7"
-            >
-              <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-8 tracking-tighter">
-                Meet Our <br/> <span className="text-brand-blue italic">Founder.</span>
-              </h2>
-              <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-                <p className="font-bold text-slate-900 text-xl">Kula Sellathurai — President of Inter-Citi Logistics</p>
-                <p>
-                  Kula Sellathurai is the President of Inter-Citi Logistics and a respected entrepreneur with decades of business leadership experience. He founded Inter-Citi Logistics in 1990 after recognizing a market need for industry-specific logistics solutions, and has since played a key role in building the company into a trusted logistics provider in Canada.
-                </p>
-                <p>
-                  Beyond his leadership at Inter-Citi Logistics, Kula has held several prominent roles in business and community organizations, including President of the Canada Sri Lanka Business Convention, President of the Sri Lanka Canada Business Council, Deputy Secretary General of the Global Federation of Sri Lankan Business Councils, and Past President of the Canadian Tamil Chamber of Commerce.
-                </p>
-                <p>
-                  His accomplishments have been recognized through numerous honours, including the Her Majesty Queen Elizabeth II Diamond Jubilee Medal, the Her Majesty Queen Elizabeth II Platinum Jubilee Medal, the His Majesty King Charles III Coronation Medal, and recognition as one of the Top 25 South Asian Entrepreneurs in Canada.
-                </p>
-              </div>
-            </motion.div>
-          </div>
+        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            <h2 className="hero-title text-4xl md:text-7xl text-slate-900 mb-12 tracking-tighter">
+              Meet Our <br/> <span className="text-brand-blue italic">Founder.</span>
+            </h2>
+            <div className="space-y-8 text-slate-600 text-lg md:text-xl leading-relaxed">
+              <p className="font-bold text-slate-900 text-2xl">Kula Sellathurai — President of Inter-Citi Logistics</p>
+              <p>
+                Kula Sellathurai is the President of Inter-Citi Logistics and a respected entrepreneur with decades of business leadership experience. He founded Inter-Citi Logistics in 1990 after recognizing a market need for industry-specific logistics solutions, and has since played a key role in building the company into a trusted logistics provider in Canada.
+              </p>
+              <p>
+                Beyond his leadership at Inter-Citi Logistics, Kula has held several prominent roles in business and community organizations, including President of the Canada Sri Lanka Business Convention, President of the Sri Lanka Canada Business Council, Deputy Secretary General of the Global Federation of Sri Lankan Business Councils, and Past President of the Canadian Tamil Chamber of Commerce.
+              </p>
+              <p>
+                His accomplishments have been recognized through numerous honours, including the Her Majesty Queen Elizabeth II Diamond Jubilee Medal, the Her Majesty Queen Elizabeth II Platinum Jubilee Medal, the His Majesty King Charles III Coronation Medal, and recognition as one of the Top 25 South Asian Entrepreneurs in Canada.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -293,55 +267,75 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Infrastructure Section */}
+      {/* Maintenance Section */}
       <section className="py-24 md:py-48 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,33,71,0.03)_0%,transparent_70%)]"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter mb-12">
-                Safety, Compliance & <br/> <span className="text-brand-blue italic">Maintenance.</span>
+                Maintenance.
               </h2>
               <p className="text-slate-500 text-xl leading-relaxed mb-12">
-                Safety and compliance are fundamental to the way we operate. We hold our drivers and equipment to high professional standards to ensure every shipment is handled with care, responsibility, and reliability.
+                Reliable service begins with dependable equipment. Our vehicles and trailers are maintained through a strict inspection and service schedule to ensure consistent performance, safety, and reliability. By upholding high maintenance standards, we support our commitment to delivering freight on time and with confidence. Clean, well-maintained equipment plays a key role in the quality and dependability of our service. As technology continues to advance, we invest in late-model vehicles and maintain clear equipment age standards to strengthen efficiency, performance, and reliability across every journey.
               </p>
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <div className="text-4xl font-black text-slate-900 mb-2 tracking-tighter">35+</div>
-                  <div className="text-[8px] font-bold uppercase tracking-[0.3em] text-slate-400">Years of Experience</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-black text-slate-900 mb-2 tracking-tighter">24/7</div>
-                  <div className="text-[8px] font-bold uppercase tracking-[0.3em] text-slate-400">Monitoring</div>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <img 
-                  src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/factory-worker-holding-clipboard-checking-inventory-warehouse-storage-department.jpg" 
-                  className="rounded-[2rem] transition-all duration-500 shadow-2xl" 
-                  alt="Safety and Compliance" 
-                  referrerPolicy="no-referrer"
-                />
-                <div className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem]">
-                  <h4 className="text-slate-900 font-bold uppercase text-[10px] tracking-widest mb-2">Compliance</h4>
-                  <p className="text-slate-500 text-xs">Rigid auditing for absolute safety compliance.</p>
-                </div>
-              </div>
-              <div className="space-y-4 pt-12">
-                <div className="p-8 bg-brand-blue rounded-[2rem] text-white">
-                  <h4 className="font-bold uppercase text-[10px] tracking-widest mb-2">Maintenance</h4>
-                  <p className="text-white/80 text-xs">Strict inspection and service schedules.</p>
-                </div>
-                <img 
-                  src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/modern-automobile-mechanic-composition.jpg" 
-                  className="rounded-[2rem] transition-all duration-500 shadow-2xl" 
-                  alt="Maintenance" 
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
+              <img 
+                src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/modern-automobile-mechanic-composition.jpg" 
+                className="relative rounded-[3rem] shadow-2xl w-full aspect-video object-cover" 
+                alt="Maintenance" 
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safety & Compliance Section */}
+      <section className="py-24 md:py-48 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
+              <img 
+                src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/factory-worker-holding-clipboard-checking-inventory-warehouse-storage-department.jpg" 
+                className="relative rounded-[3rem] shadow-2xl w-full aspect-video object-cover" 
+                alt="Safety and Compliance" 
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-1 lg:order-2"
+            >
+              <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter mb-12">
+                Safety & <br/> <span className="text-brand-blue italic">Compliance.</span>
+              </h2>
+              <p className="text-slate-500 text-xl leading-relaxed mb-12">
+                Safety and compliance are fundamental to the way we operate. We hold our drivers to high professional standards to ensure every shipment is handled with care, responsibility, and reliability. Through our partnership with a professional driver service, we maintain a strong focus on driver recruitment, training, and logbook auditing. Drivers also receive ongoing updates on safety procedures, border-crossing requirements, accident prevention, and emergency response practices. Each driver completes a thorough orientation program and must meet strict qualification requirements, including a minimum age of 25 and at least two years of cross-border experience. Every trip is monitored and reviewed to help maintain compliance, service excellence, and customer confidence.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>

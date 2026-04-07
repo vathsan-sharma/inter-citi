@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
               <ContactCard 
                 icon={<Mail className="w-5 h-5" />}
                 label="Email"
-                value="info@inter-ciiti.com"
+                value="info@inter-citi.com"
                 delay={0.2}
               />
               
@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/10 blur-3xl -mr-16 -mt-16 group-hover:bg-brand-blue/20 transition-colors"></div>
               <h3 className="text-lg font-bold mb-4 italic tracking-tight text-slate-900">Sales Support</h3>
               <p className="text-slate-500 text-sm mb-6 leading-relaxed font-light">For fast quotes and custom logistical strategies:</p>
-              <div className="text-xl font-bold text-slate-900 mb-2 font-mono">sales@inter-ciiti.com</div>
+              <div className="text-xl font-bold text-slate-900 mb-2 font-mono">info@inter-citi.com</div>
               <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-blue">Priority Response Channel</div>
             </motion.div>
           </div>

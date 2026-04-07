@@ -63,7 +63,7 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-x-hidden bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden px-6 lg:px-10 bg-brand-blue">
+      <section className="relative min-h-[100svh] flex items-center overflow-hidden px-6 lg:px-10">
         {/* Background Video with Overlay */}
         <motion.div 
           style={{ y: videoY }}
@@ -74,12 +74,12 @@ const Home: React.FC = () => {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover scale-110 opacity-40"
+            className="w-full h-full object-cover opacity-100"
           >
             <source src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/From%20KlickPin%20CF%20Pin%20on%20FAMCO.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-brand-blue/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
         </motion.div>
 
         <motion.div 
@@ -111,10 +111,10 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-center gap-8"
             >
-              <button className="bg-white text-brand-blue px-10 md:px-14 py-4 md:py-5 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest flex items-center gap-4 hover:bg-brand-accent hover:text-white transition-all duration-500 group min-h-[44px] w-full sm:w-auto justify-center shadow-2xl">
+              <Link to="/services" className="bg-white text-brand-blue px-10 md:px-14 py-4 md:py-5 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest flex items-center gap-4 hover:bg-brand-accent hover:text-white transition-all duration-500 group min-h-[44px] sm:w-auto justify-center shadow-2xl">
                 See How It Works
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-              </button>
+              </Link>
               <Link to="/contact" className="text-white/60 font-bold uppercase tracking-widest text-[9px] md:text-[11px] hover:text-white transition-colors flex items-center gap-3 group min-h-[44px]">
                 Request a Quote <span className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-white transition-all"></span>
               </Link>
@@ -424,24 +424,28 @@ const Home: React.FC = () => {
               author="Oviya J"
               role="Operations Manager"
               delay={0.1}
+              dark={false}
             />
             <TestimonialCard 
               quote="The team at Inter-Citi is exceptional. They handle our warehousing and distribution with precision, ensuring our products reach our customers on time, every time. Their attention to detail is impressive."
               author="Tulshi Patel"
               role="Supply Chain Director"
               delay={0.2}
+              dark={false}
             />
             <TestimonialCard 
               quote="We've worked with many logistics companies, but Inter-Citi stands out for their reliability and customer support. Their 24/7 dispatch team is always available to help, making our logistics operations seamless."
               author="Abdulhaqq Bello"
               role="Logistics Coordinator"
               delay={0.3}
+              dark={false}
             />
             <TestimonialCard 
               quote="Inter-Citi's last mile solutions have significantly improved our delivery times and customer satisfaction. Their professional drivers and real-time tracking provide peace of mind for our time-critical shipments."
               author="Ravi Siva"
               role="E-commerce Manager"
               delay={0.4}
+              dark={false}
             />
           </div>
         </div>

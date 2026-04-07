@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-10 pt-6 md:pt-8">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 bg-brand-blue/40 backdrop-blur-xl border border-white/10 px-4 md:px-6 py-3 md:py-4 rounded-2xl md:rounded-3xl shadow-2xl">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 bg-brand-blue/20 border border-white/10 px-4 md:px-6 py-3 md:py-4 rounded-2xl md:rounded-3xl shadow-2xl">
         
         {/* Left Nav Links */}
         <div className="hidden lg:flex items-center flex-1">

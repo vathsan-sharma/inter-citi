@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-6 text-[13px]">
               <li className="flex flex-col">
                 <span className="text-white/30 uppercase text-[10px] font-bold tracking-widest mb-2">Email</span>
-                <a href="mailto:info@inter-ciiti.com" className="text-white hover:text-white/80 transition-colors font-mono">info@inter-ciiti.com</a>
+                <a href="mailto:info@inter-citi.com" className="text-white hover:text-white/80 transition-colors font-mono">info@inter-citi.com</a>
               </li>
               <li className="flex flex-col">
                 <span className="text-white/30 uppercase text-[10px] font-bold tracking-widest mb-2">Phone</span>
