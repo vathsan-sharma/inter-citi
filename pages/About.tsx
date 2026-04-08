@@ -280,9 +280,17 @@ const About: React.FC = () => {
               <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter mb-12">
                 Maintenance.
               </h2>
-              <p className="text-slate-500 text-xl leading-relaxed mb-12">
-                Reliable service begins with dependable equipment. Our vehicles and trailers are maintained through a strict inspection and service schedule to ensure consistent performance, safety, and reliability. By upholding high maintenance standards, we support our commitment to delivering freight on time and with confidence. Clean, well-maintained equipment plays a key role in the quality and dependability of our service. As technology continues to advance, we invest in late-model vehicles and maintain clear equipment age standards to strengthen efficiency, performance, and reliability across every journey.
-              </p>
+              <div className="space-y-6 text-slate-500 text-xl leading-relaxed mb-12 font-light">
+                <p>
+                  Reliable service begins with dependable equipment. Our vehicles and trailers are maintained through a strict inspection and service schedule to ensure consistent performance, safety, and reliability.
+                </p>
+                <p>
+                  By upholding high maintenance standards, we support our commitment to delivering freight on time and with confidence. Clean, well-maintained equipment plays a key role in the quality and dependability of our service.
+                </p>
+                <p>
+                  As technology continues to advance, we invest in late-model vehicles and maintain clear equipment age standards to strengthen efficiency, performance, and reliability across every journey.
+                </p>
+              </div>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -294,7 +302,7 @@ const About: React.FC = () => {
               <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
               <img 
                 src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/modern-automobile-mechanic-composition.jpg" 
-                className="relative rounded-[3rem] shadow-2xl w-full aspect-video object-cover" 
+                className="relative rounded-[3rem] shadow-2xl w-full aspect-square object-cover" 
                 alt="Maintenance" 
                 referrerPolicy="no-referrer"
               />
@@ -317,7 +325,7 @@ const About: React.FC = () => {
               <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
               <img 
                 src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/factory-worker-holding-clipboard-checking-inventory-warehouse-storage-department.jpg" 
-                className="relative rounded-[3rem] shadow-2xl w-full aspect-video object-cover" 
+                className="relative rounded-[3rem] shadow-2xl w-full aspect-square object-cover" 
                 alt="Safety and Compliance" 
                 referrerPolicy="no-referrer"
               />
@@ -332,9 +340,17 @@ const About: React.FC = () => {
               <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter mb-12">
                 Safety & <br/> <span className="text-brand-blue italic">Compliance.</span>
               </h2>
-              <p className="text-slate-500 text-xl leading-relaxed mb-12">
-                Safety and compliance are fundamental to the way we operate. We hold our drivers to high professional standards to ensure every shipment is handled with care, responsibility, and reliability. Through our partnership with a professional driver service, we maintain a strong focus on driver recruitment, training, and logbook auditing. Drivers also receive ongoing updates on safety procedures, border-crossing requirements, accident prevention, and emergency response practices. Each driver completes a thorough orientation program and must meet strict qualification requirements, including a minimum age of 25 and at least two years of cross-border experience. Every trip is monitored and reviewed to help maintain compliance, service excellence, and customer confidence.
-              </p>
+              <div className="space-y-6 text-slate-500 text-xl leading-relaxed mb-12 font-light">
+                <p>
+                  Safety and compliance are fundamental to the way we operate. We hold our drivers to high professional standards to ensure every shipment is handled with care, responsibility, and reliability.
+                </p>
+                <p>
+                  Through our partnership with a professional driver service, we maintain a strong focus on driver recruitment, training, and logbook auditing. Drivers also receive ongoing updates on safety procedures, border-crossing requirements, accident prevention, and emergency response practices.
+                </p>
+                <p>
+                  Each driver completes a thorough orientation program and must meet strict qualification requirements, including a minimum age of 25 and at least two years of cross-border experience. Every trip is monitored and reviewed to help maintain compliance, service excellence, and customer confidence.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>

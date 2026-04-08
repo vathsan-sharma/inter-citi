@@ -300,7 +300,6 @@ const Home: React.FC = () => {
                 With a network that spans across Canada, we ensure shipments move efficiently and reliably, no matter the destination.
               </p>
               <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">Coverage: 100%</span>
                 <div className="flex gap-1">
                   {[1,2,3,4,5].map(i => <motion.div key={i} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, delay: i * 0.2, repeat: Infinity }} className="w-1 h-1 bg-white rounded-full"></motion.div>)}
                 </div>
@@ -324,7 +323,6 @@ const Home: React.FC = () => {
                 Our real-time tracking and modern logistics systems keep you informed and connected throughout the shipping journey.
               </p>
               <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">Uptime: 99.9%</span>
                 <div className="flex gap-1">
                   {[1,2,3,4,5].map(i => <motion.div key={i} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, delay: i * 0.2, repeat: Infinity }} className="w-1 h-1 bg-white rounded-full"></motion.div>)}
                 </div>
@@ -348,7 +346,6 @@ const Home: React.FC = () => {
                 Whether it is an urgent shipment or ongoing logistics support, we provide flexible, dependable solutions tailored to your needs.
               </p>
               <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">When reliability matters most, Inter-Citi Logistics delivers.</span>
               </div>
             </motion.div>
           </div>
@@ -414,36 +411,36 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-24">
             <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">
-              What Our <span className="text-brand-blue italic">Partners Say.</span>
+              What Our <span className="text-brand-blue italic">Client Say.</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <TestimonialCard 
-              quote="Inter-Citi Logistics has been a reliable partner for our business for several years. Their commitment to timely deliveries and professional service is unmatched. We highly recommend them for any logistics needs."
+              quote="My mother has a disability. When I placed orders for her, I provided instructions for the driver to follow. The driver adhered to the instructions. I am very pleased with their service."
               author="Oviya J"
-              role="Operations Manager"
+              role="Verified Client"
               delay={0.1}
               dark={false}
             />
             <TestimonialCard 
-              quote="The team at Inter-Citi is exceptional. They handle our warehousing and distribution with precision, ensuring our products reach our customers on time, every time. Their attention to detail is impressive."
+              quote="Excellent service from start to finish. The driver was efficient, professional, and ensured that everything was delivered on time and in perfect condition. Highly recommend for anyone in need of reliable logistics support."
               author="Tulshi Patel"
-              role="Supply Chain Director"
+              role="Verified Client"
               delay={0.2}
               dark={false}
             />
             <TestimonialCard 
-              quote="We've worked with many logistics companies, but Inter-Citi stands out for their reliability and customer support. Their 24/7 dispatch team is always available to help, making our logistics operations seamless."
+              quote="I’ve had a great experience with Inter-Citi Couriers so far. Their deliveries are always on time, and the packages come in perfect condition. I really appreciate how responsive and professional their customer service team is. Tracking my shipments is simple, and the updates are always accurate. Overall, I find them to be a reliable and efficient courier service I can count on."
               author="Abdulhaqq Bello"
-              role="Logistics Coordinator"
+              role="Verified Client"
               delay={0.3}
               dark={false}
             />
             <TestimonialCard 
-              quote="Inter-Citi's last mile solutions have significantly improved our delivery times and customer satisfaction. Their professional drivers and real-time tracking provide peace of mind for our time-critical shipments."
+              quote="Great Transportation company. Saved me during emergency for last minutes rush shipping. Very reasonable charges"
               author="Ravi Siva"
-              role="E-commerce Manager"
+              role="Verified Client"
               delay={0.4}
               dark={false}
             />
