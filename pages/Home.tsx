@@ -419,28 +419,28 @@ const Home: React.FC = () => {
             <TestimonialCard 
               quote="My mother has a disability. When I placed orders for her, I provided instructions for the driver to follow. The driver adhered to the instructions. I am very pleased with their service."
               author="Oviya J"
-              role="Verified Client"
+              role=""
               delay={0.1}
               dark={false}
             />
             <TestimonialCard 
               quote="Excellent service from start to finish. The driver was efficient, professional, and ensured that everything was delivered on time and in perfect condition. Highly recommend for anyone in need of reliable logistics support."
               author="Tulshi Patel"
-              role="Verified Client"
+              role=""
               delay={0.2}
               dark={false}
             />
             <TestimonialCard 
               quote="I’ve had a great experience with Inter-Citi Couriers so far. Their deliveries are always on time, and the packages come in perfect condition. I really appreciate how responsive and professional their customer service team is. Tracking my shipments is simple, and the updates are always accurate. Overall, I find them to be a reliable and efficient courier service I can count on."
               author="Abdulhaqq Bello"
-              role="Verified Client"
+              role=""
               delay={0.3}
               dark={false}
             />
             <TestimonialCard 
               quote="Great Transportation company. Saved me during emergency for last minutes rush shipping. Very reasonable charges"
               author="Ravi Siva"
-              role="Verified Client"
+              role=""
               delay={0.4}
               dark={false}
             />

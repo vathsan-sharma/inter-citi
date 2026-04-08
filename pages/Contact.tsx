@@ -258,7 +258,6 @@ const Contact: React.FC = () => {
 
             <div className="absolute bottom-0 right-0 p-6 md:p-8 border-r border-b border-slate-200 rounded-br-3xl backdrop-blur-sm bg-white/40 text-right z-20">
               <div className="text-2xl font-black text-slate-900 uppercase tracking-tight">24/7 Ops</div>
-              <div className="mt-4 text-[10px] font-mono text-slate-400">LAT: 56.1304° N // LONG: 106.3468° W</div>
             </div>
 
             {/* Pings */}
