@@ -103,7 +103,7 @@ const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-white/60 text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-light"
             >
-              Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over 35 years of excellence, engineered for the modern world.
+              Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 1990. Over 35 years of excellence, engineered for the modern world.
             </motion.p>
 
             <motion.div
@@ -116,7 +116,7 @@ const About: React.FC = () => {
               <div className="w-px h-12 bg-white/10"></div>
               <Counter value="1.2M+" label="Deliveries" delay={0.5} />
               <div className="w-px h-12 bg-white/10"></div>
-              <Counter value="10+" label="Provinces" delay={0.6} />
+              <Counter value="10" label="Provinces" delay={0.6} />
             </motion.div>
           </div>
           
@@ -164,7 +164,7 @@ const About: React.FC = () => {
               </h2>
               <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-light">
                 <p>
-                  Inter-Citi Logistics has been a trusted logistics partner serving customers across Canada since 1990. Over 35 years of excellence, we have earned a reputation for dependable service, fast turnaround times, and professional support.
+                  Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 1990. Over 35 years of excellence, we have earned a reputation for dependable service, fast turnaround times, and professional support.
                 </p>
                 <p>
                   With one- and two-day delivery, an established transportation network, and extensive industry expertise, we provide logistics solutions that are efficient, flexible, and reliable.
@@ -261,7 +261,7 @@ const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
             <ValueCard icon={<Users />} title="Our Service" body="We are committed to operating with efficiency, professionalism, and full compliance with all rules and regulations. Every shipment is handled with care, accuracy, and accountability." delay={0.1} />
-            <ValueCard icon={<Target />} title="Our People" body="Our people are the foundation of our success. We value our partners, support our employees, and foster a workplace built on respect, reliability, and performance." delay={0.2} />
+            <ValueCard icon={<Target />} title="Our People" body="Our people are the foundation of our success. We value our clients, support our employees, and foster a workplace built on respect, reliability, and performance." delay={0.2} />
             <ValueCard icon={<Heart />} title="Our Community" body="Giving back is part of who we are. We take pride in supporting and volunteering within our community, building connections that extend beyond logistics." delay={0.3} />
           </div>
         </div>

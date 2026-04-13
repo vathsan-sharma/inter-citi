@@ -78,8 +78,8 @@ const Home: React.FC = () => {
           >
             <source src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/From%20KlickPin%20CF%20Pin%20on%20FAMCO.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-black/5"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         </motion.div>
 
         <motion.div 
@@ -127,7 +127,7 @@ const Home: React.FC = () => {
           <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12 w-full md:w-auto">
             <Counter value="35+" label="Years of Expertise" delay={0.4} />
             <Counter value="1.2M+" label="Successful Deliveries" delay={0.5} />
-            <Counter value="10+" label="Provinces Covered" delay={0.6} />
+            <Counter value="10" label="Provinces Covered" delay={0.6} />
           </div>
         </div>
       </section>
@@ -406,44 +406,63 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Client Reviews Section */}
+      {/* Clients Reviews Section */}
       <section className="py-24 md:py-48 bg-white relative overflow-hidden border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-24">
-            <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">
-              What Our <span className="text-brand-blue italic">Client Say.</span>
-            </h2>
+        {/* Decorative background */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#002147 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+        
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-24 gap-8">
+            <div className="max-w-2xl text-center md:text-left">
+              <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">
+                What Our <span className="text-brand-blue italic">Clients Say.</span>
+              </h2>
+            </div>
+            <div className="hidden md:flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400">
+                <Users2 className="w-5 h-5" />
+              </div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Trusted by Industry Leaders</div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <TestimonialCard 
-              quote="My mother has a disability. When I placed orders for her, I provided instructions for the driver to follow. The driver adhered to the instructions. I am very pleased with their service."
-              author="Oviya J"
-              role=""
-              delay={0.1}
-              dark={false}
-            />
-            <TestimonialCard 
-              quote="Excellent service from start to finish. The driver was efficient, professional, and ensured that everything was delivered on time and in perfect condition. Highly recommend for anyone in need of reliable logistics support."
-              author="Tulshi Patel"
-              role=""
-              delay={0.2}
-              dark={false}
-            />
-            <TestimonialCard 
-              quote="I’ve had a great experience with Inter-Citi Couriers so far. Their deliveries are always on time, and the packages come in perfect condition. I really appreciate how responsive and professional their customer service team is. Tracking my shipments is simple, and the updates are always accurate. Overall, I find them to be a reliable and efficient courier service I can count on."
-              author="Abdulhaqq Bello"
-              role=""
-              delay={0.3}
-              dark={false}
-            />
-            <TestimonialCard 
-              quote="Great Transportation company. Saved me during emergency for last minutes rush shipping. Very reasonable charges"
-              author="Ravi Siva"
-              role=""
-              delay={0.4}
-              dark={false}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <TestimonialCard 
+                quote="I’ve had a great experience with Inter-Citi Couriers so far. Their deliveries are always on time, and the packages come in perfect condition. I really appreciate how responsive and professional their customer service team is. Tracking my shipments is simple, and the updates are always accurate. Overall, I find them to be a reliable and efficient courier service I can count on."
+                author="Abdulhaqq Bello"
+                role=""
+                delay={0.1}
+                dark={false}
+              />
+            </div>
+            <div className="lg:col-span-1">
+              <TestimonialCard 
+                quote="Great Transportation company. Saved me during emergency for last minutes rush shipping. Very reasonable charges"
+                author="Ravi Siva"
+                role=""
+                delay={0.2}
+                dark={false}
+              />
+            </div>
+            <div className="lg:col-span-1">
+              <TestimonialCard 
+                quote="My mother has a disability. When I placed orders for her, I provided instructions for the driver to follow. The driver adhered to the instructions. I am very pleased with their service."
+                author="Oviya J"
+                role=""
+                delay={0.3}
+                dark={false}
+              />
+            </div>
+            <div className="lg:col-span-2">
+              <TestimonialCard 
+                quote="Excellent service from start to finish. The driver was efficient, professional, and ensured that everything was delivered on time and in perfect condition. Highly recommend for anyone in need of reliable logistics support."
+                author="Tulshi Patel"
+                role=""
+                delay={0.4}
+                dark={false}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -471,25 +490,11 @@ const Home: React.FC = () => {
                 </h2>
                 
                 <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12 font-medium">
-                  Our infrastructure spans the second-largest country in the world, connecting major economic hubs with precision and reliability.
+                  No matter where you are located, Inter-Citi Logistics provides reliable delivery solutions across Canada. From urban centres to regional and remote destinations, we ensure efficient, professional service with the responsiveness and dependability our clients expect.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
-                  <div className="space-y-1">
-                    <div className="text-4xl font-black text-slate-900">35+</div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Years of Expertise</div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-4xl font-black text-slate-900">1.2M+</div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Deliveries</div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-4xl font-black text-slate-900">10+</div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Provinces</div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
+                <div className="space-y-6">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-blue mb-4">Provinces We Deliver To</div>
                   <div className="flex flex-wrap gap-2">
                     {['Ontario', 'Quebec', 'British Columbia', 'Alberta', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Newfoundland and Labrador', 'Prince Edward Island'].map((province) => (
                       <button
