@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-bold uppercase tracking-[0.3em] text-[10px] mb-6 italic">Start Shipping</h3>
             <p className="text-xs text-white/40 mb-8 leading-relaxed font-light">Ready to experience the Inter-Citi advantage? Get a fast quote today.</p>
             <Link to="/contact" className="block text-center bg-white text-brand-blue py-4 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-slate-100 transition-all shadow-2xl">
-              Request a Quote
+              Set up an account
             </Link>
           </div>
         </div>

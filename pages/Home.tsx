@@ -17,7 +17,7 @@ const Counter: React.FC<{ value: string, label: string, delay?: number }> = ({ v
       transition={{ duration: 0.8, delay }}
       className="flex flex-col items-center md:items-end"
     >
-      <div className="text-2xl md:text-4xl font-black text-white tracking-tight mb-1 flex items-baseline [text-shadow:0_2px_10px_rgba(0,0,0,0.5)]">
+      <div className="text-xl md:text-3xl font-black text-white tracking-tight mb-1 flex items-baseline [text-shadow:0_2px_10px_rgba(0,0,0,0.5)]">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -26,7 +26,7 @@ const Counter: React.FC<{ value: string, label: string, delay?: number }> = ({ v
           {value}
         </motion.span>
       </div>
-      <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.3em] text-white/70 text-center md:text-right [text-shadow:0_1px_4px_rgba(0,0,0,0.3)]">{label}</span>
+      <span className="text-[6px] md:text-[8px] font-bold uppercase tracking-[0.3em] text-white/70 text-center md:text-right [text-shadow:0_1px_4px_rgba(0,0,0,0.3)]">{label}</span>
     </motion.div>
   );
 };
@@ -76,31 +76,29 @@ const Home: React.FC = () => {
             playsInline
             className="w-full h-full object-cover opacity-100"
           >
-            <source src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/Untitled%20video%20(38).mp4" type="video/mp4" />
+            <source src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/Untitled%20video%20(39).mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/30"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30"></div>
         </motion.div>
 
         <motion.div 
           style={{ y: textY, opacity, scale }}
-          className="relative z-10 max-w-7xl mx-auto w-full pt-40 pb-12 md:pt-56 md:pb-20"
+          className="relative z-10 max-w-7xl mx-auto w-full pt-28 pb-12 md:pt-40 md:pb-20"
         >
-          <div className="max-w-5xl">
+          <div className="max-w-4xl">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.9] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]"
+              className="text-4xl md:text-6xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1.1] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]"
             >
-              Excellence in <br/> <span className="text-white/80 italic">last mile solutions.</span>
+              Excellence in <br className="hidden md:block" /> <span className="text-white/80 italic">last mile solutions.</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-2xl md:text-4xl font-light text-white/90 mb-12 tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]"
+              className="text-lg md:text-2xl font-light text-white/90 mb-10 tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]"
             >
               Inter-Citi Logistics Canada
             </motion.p>
@@ -109,14 +107,11 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row items-center gap-8"
+              className="flex justify-center sm:justify-start"
             >
-              <Link to="/services" className="bg-white text-brand-blue px-10 md:px-14 py-4 md:py-5 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest flex items-center gap-4 hover:bg-brand-accent hover:text-white transition-all duration-500 group min-h-[44px] sm:w-auto justify-center shadow-2xl">
+              <Link to="/services" className="bg-white text-brand-blue px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-4 hover:bg-brand-accent hover:text-white transition-all duration-500 group min-h-[44px] sm:w-auto justify-center shadow-2xl">
                 See How It Works
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-              </Link>
-              <Link to="/contact" className="text-white/60 font-bold uppercase tracking-widest text-[9px] md:text-[11px] hover:text-white transition-colors flex items-center gap-3 group min-h-[44px]">
-                Request a Quote <span className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-white transition-all"></span>
               </Link>
             </motion.div>
           </div>
@@ -127,7 +122,6 @@ const Home: React.FC = () => {
           <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12 w-full md:w-auto">
             <Counter value="35+" label="Years of Expertise" delay={0.4} />
             <Counter value="1.2M+" label="Successful Deliveries" delay={0.5} />
-            <Counter value="10" label="Provinces Covered" delay={0.6} />
           </div>
         </div>
       </section>

@@ -199,7 +199,7 @@ const ServicesOverview: React.FC = () => {
             Contact our team today for a custom solution tailored to your business needs in Canada.
           </p>
           <Link to="/contact" className="inline-block bg-brand-blue text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-accent transition-all shadow-2xl shadow-brand-blue/20">
-            Get a Custom Quote
+            Set up an account
           </Link>
         </div>
       </section>
