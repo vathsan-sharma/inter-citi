@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-10 pt-6 md:pt-8">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 bg-brand-blue/20 border border-white/10 px-4 md:px-6 py-3 md:py-4 rounded-2xl md:rounded-3xl shadow-2xl">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 bg-brand-blue/40 backdrop-blur-xl border border-white/20 px-4 md:px-6 py-3 md:py-4 rounded-2xl md:rounded-3xl shadow-2xl">
         
         {/* Left Nav Links */}
         <div className="hidden lg:flex items-center flex-1">
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
                 key={link.path}
                 to={link.path}
                 className={`text-[10px] font-bold uppercase tracking-widest transition-all hover:text-white px-4 py-2 rounded-lg ${
-                  isActive(link.path) ? 'text-white bg-brand-blue' : 'text-white/60'
+                  isActive(link.path) ? 'text-white bg-brand-blue/60 backdrop-blur-sm' : 'text-white/80'
                 }`}
               >
                 {link.name}
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
 
         {/* Center Logo */}
         <div className="flex items-center justify-center">
-          <Link to="/" className="flex items-center bg-white px-4 py-2 rounded-xl md:rounded-2xl shadow-xl hover:scale-105 transition-transform">
+          <Link to="/" className="flex items-center hover:scale-105 transition-transform">
             <img 
               src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(30).png" 
               alt="Inter-Citi Logistics" 

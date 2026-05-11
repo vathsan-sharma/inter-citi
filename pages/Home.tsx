@@ -17,7 +17,7 @@ const Counter: React.FC<{ value: string, label: string, delay?: number }> = ({ v
       transition={{ duration: 0.8, delay }}
       className="flex flex-col items-center md:items-end"
     >
-      <div className="text-2xl md:text-4xl font-black text-white tracking-tight mb-1 flex items-baseline">
+      <div className="text-2xl md:text-4xl font-black text-white tracking-tight mb-1 flex items-baseline [text-shadow:0_2px_10px_rgba(0,0,0,0.5)]">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -26,7 +26,7 @@ const Counter: React.FC<{ value: string, label: string, delay?: number }> = ({ v
           {value}
         </motion.span>
       </div>
-      <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 text-center md:text-right">{label}</span>
+      <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.3em] text-white/70 text-center md:text-right [text-shadow:0_1px_4px_rgba(0,0,0,0.3)]">{label}</span>
     </motion.div>
   );
 };
@@ -76,10 +76,10 @@ const Home: React.FC = () => {
             playsInline
             className="w-full h-full object-cover opacity-100"
           >
-            <source src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/From%20KlickPin%20CF%20Pin%20on%20FAMCO.mp4" type="video/mp4" />
+            <source src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/Untitled%20video%20(38).mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/5"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30"></div>
         </motion.div>
 
         <motion.div 
@@ -91,18 +91,18 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.9]"
+              className="text-5xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.9] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]"
             >
-              Inter-Citi <span className="text-white/80 italic">Logistics.</span>
+              Excellence in <br/> <span className="text-white/80 italic">last mile solutions.</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-2xl md:text-4xl font-light text-white/90 mb-12 tracking-tight"
+              className="text-2xl md:text-4xl font-light text-white/90 mb-12 tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]"
             >
-              Excellence in Canadian Logistics
+              Inter-Citi Logistics Canada
             </motion.p>
 
             <motion.div
