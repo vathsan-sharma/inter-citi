@@ -120,7 +120,7 @@ const Home: React.FC = () => {
         {/* Bottom Stats & Controls */}
         <div className="absolute bottom-8 md:bottom-16 left-6 md:left-10 right-6 md:left-10 z-10 flex flex-col md:flex-row items-center md:items-end justify-end gap-6 md:gap-8">
           <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12 w-full md:w-auto">
-            <Counter value="35+" label="Years of Expertise" delay={0.4} />
+            <Counter value="25+" label="Years of Expertise" delay={0.4} />
             <Counter value="1.2M+" label="Successful Deliveries" delay={0.5} />
           </div>
         </div>
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
                 transition={{ delay: 0.5 }}
                 className="absolute -bottom-6 md:-bottom-10 -right-4 md:-right-10 bg-brand-blue p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] text-white shadow-2xl"
               >
-                <div className="text-4xl md:text-6xl font-black mb-1 tracking-tighter">35+</div>
+                <div className="text-4xl md:text-6xl font-black mb-1 tracking-tighter">25+</div>
                 <div className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] opacity-50">Years of Trust</div>
               </motion.div>
             </motion.div>

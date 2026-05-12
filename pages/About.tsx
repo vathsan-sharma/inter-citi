@@ -53,7 +53,7 @@ const About: React.FC = () => {
     },
     {
       question: "How long has Inter-Citi Logistics been in business?",
-      answer: "Inter-Citi Logistics Canada was established in 1990. We have over 35 years of experience in the logistics and transportation industry."
+      answer: "Inter-Citi Logistics Canada was established in 2001. We have over 25 years of experience in the logistics and transportation industry."
     },
     {
       question: "What types of services do you offer?",
@@ -65,7 +65,7 @@ const About: React.FC = () => {
     },
     {
       question: "What makes Inter-Citi different from other providers?",
-      answer: "Our heritage of over 35 years, our strategic 30,000 sq ft climate-controlled facility in Scarborough, and our relentless commitment to customer satisfaction through 24/7 dispatch support set us apart."
+      answer: "Our heritage of over 25 years, our strategic 30,000 sq ft climate-controlled facility in Scarborough, and our relentless commitment to customer satisfaction through 24/7 dispatch support set us apart."
     }
   ];
 
@@ -103,7 +103,7 @@ const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-white/60 text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-light"
             >
-              Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 1990. Over 35 years of excellence, engineered for the modern world.
+              Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 2001. Over 25 years of excellence, engineered for the modern world.
             </motion.p>
 
             <motion.div
@@ -112,7 +112,7 @@ const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex items-center gap-8"
             >
-              <Counter value="35+" label="Years of Expertise" delay={0.4} />
+              <Counter value="25+" label="Years of Expertise" delay={0.4} />
               <div className="w-px h-12 bg-white/10"></div>
               <Counter value="1.2M+" label="Deliveries" delay={0.5} />
               <div className="w-px h-12 bg-white/10"></div>
@@ -142,7 +142,7 @@ const About: React.FC = () => {
               className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2.5rem] shadow-2xl hidden md:block"
             >
               <Award className="w-10 h-10 text-brand-blue mb-4" />
-              <div className="text-xs font-black uppercase tracking-widest text-slate-900">Est. 1990</div>
+              <div className="text-xs font-black uppercase tracking-widest text-slate-900">Est. 2001</div>
             </motion.div>
           </div>
         </div>
@@ -160,11 +160,11 @@ const About: React.FC = () => {
               className="lg:col-span-6"
             >
               <h2 className="hero-title text-slate-900 mb-12">
-                35+ Years of <br/> <span className="text-slate-400 italic">Relentless</span> <br/> Service.
+                25+ Years of <br/> <span className="text-slate-400 italic">Relentless</span> <br/> Service.
               </h2>
               <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-light">
                 <p>
-                  Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 1990. Over 35 years of excellence, we have earned a reputation for dependable service, fast turnaround times, and professional support.
+                  Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 2001. Over 25 years of excellence, we have earned a reputation for dependable service, fast turnaround times, and professional support.
                 </p>
                 <p>
                   With one- and two-day delivery, an established transportation network, and extensive industry expertise, we provide logistics solutions that are efficient, flexible, and reliable.
@@ -189,7 +189,7 @@ const About: React.FC = () => {
                       <h3 className="text-3xl font-black text-slate-900 tracking-tight">Our Mission</h3>
                     </div>
                     <p className="text-slate-500 text-lg leading-relaxed italic font-light">
-                      "Delivering quality with every mile. To provide efficient, quality-driven logistics solutions with customer satisfaction at the center of everything we do."
+                      "Delivering quality with every mile. Efficient logistics. Reliable service. Customer satisfaction in every delivery."
                     </p>
                   </motion.div>
 
@@ -233,7 +233,7 @@ const About: React.FC = () => {
             <div className="space-y-8 text-slate-600 text-lg md:text-xl leading-relaxed">
               <p className="font-bold text-slate-900 text-2xl">Kula Sellathurai — President of Inter-Citi Logistics</p>
               <p>
-                Kula Sellathurai is the President of Inter-Citi Logistics and a respected entrepreneur with decades of business leadership experience. He founded Inter-Citi Logistics in 1990 after recognizing a market need for industry-specific logistics solutions, and has since played a key role in building the company into a trusted logistics provider in Canada.
+                Kula Sellathurai is the President of Inter-Citi Logistics and a respected entrepreneur with decades of business leadership experience. He founded Inter-Citi Logistics in 2001 after recognizing a market need for industry-specific logistics solutions, and has since played a key role in building the company into a trusted logistics provider in Canada.
               </p>
               <p>
                 Beyond his leadership at Inter-Citi Logistics, Kula has held several prominent roles in business and community organizations, including President of the Canada Sri Lanka Business Convention, President of the Sri Lanka Canada Business Council, Deputy Secretary General of the Global Federation of Sri Lankan Business Councils, and Past President of the Canadian Tamil Chamber of Commerce.
