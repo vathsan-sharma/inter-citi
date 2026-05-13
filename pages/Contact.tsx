@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
               <ContactCard 
                 icon={<Clock className="w-5 h-5" />}
                 label="Business Hours"
-                value="Mon - Fri: 8:00 AM - 6:00 PM"
+                value="Monday to Friday: 9:00 AM – 5:00 PM"
                 delay={0.4}
               />
             </motion.div>
