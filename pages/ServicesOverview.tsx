@@ -47,7 +47,7 @@ const ServicesOverview: React.FC = () => {
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-accent/20 blur-[120px] rounded-full"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 pt-40 pb-20 md:pt-56 md:pb-32">
+        <div className="container-custom relative z-10 pt-40 pb-20 md:pt-56 md:pb-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const ServicesOverview: React.FC = () => {
 
       {/* Services Grid */}
       <section className="py-32 relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="container-custom">
           <div className="grid grid-cols-1 gap-32">
             {services.map((s, idx) => (
               <motion.div 
@@ -161,7 +161,7 @@ const ServicesOverview: React.FC = () => {
 
       {/* Capabilities Section */}
       <section className="py-32 bg-brand-blue border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               { icon: <Shield className="w-6 h-6" />, title: 'Secure Handling', desc: 'Advanced monitoring and secure chain of custody for every shipment.' },

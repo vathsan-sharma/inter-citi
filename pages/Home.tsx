@@ -82,14 +82,14 @@ const Home: React.FC = () => {
 
         <motion.div 
           style={{ y: textY, opacity, scale }}
-          className="relative z-10 max-w-7xl mx-auto w-full pt-28 pb-12 md:pt-40 md:pb-20"
+          className="relative z-10 container-custom pt-28 pb-12 md:pt-40 md:pb-20"
         >
           <div className="max-w-4xl">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1.1] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]"
+              className="hero-title text-white mb-6 md:mb-8 [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]"
             >
               Excellence in <br className="hidden md:block" /> <span className="text-white/80 italic">last mile solutions.</span>
             </motion.h1>
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-lg md:text-2xl font-light text-white/90 mb-10 tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]"
+              className="hero-subtitle text-white/90 mb-10 [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]"
             >
               Inter-Citi Logistics Canada
             </motion.p>
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       {/* Trust & Reliability Section */}
-      <section className="py-16 md:py-32 bg-white relative overflow-hidden">
+      <section className="section-padding bg-white relative overflow-hidden">
         {/* Floating Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div 
@@ -147,7 +147,7 @@ const Home: React.FC = () => {
           />
         </div>
         <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-slate-50 -z-10 skew-x-0 lg:skew-x-6 translate-x-0 lg:translate-x-1/4 backdrop-blur-3xl"></div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -218,8 +218,8 @@ const Home: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-32 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <div className="container-custom">
           <div className="text-center mb-16 md:mb-24">
             <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">Our <span className="text-brand-blue/40">Process</span></h2>
           </div>
@@ -261,11 +261,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Why Choose Us - Technical Grid Layout */}
-      <section className="py-16 md:py-32 bg-brand-blue overflow-hidden relative border-y border-white/5">
+      <section className="section-padding bg-brand-blue overflow-hidden relative border-y border-white/5">
         {/* Background Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+        <div className="container-custom relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
             <div className="max-w-2xl">
               <h2 className="hero-title text-4xl md:text-8xl text-white tracking-tighter">Why <span className="text-white/80">Choose Us?</span></h2>
@@ -347,9 +347,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-16 md:py-32 bg-slate-50 relative overflow-hidden">
+      <section className="section-padding bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,rgba(0,33,71,0.05)_0%,transparent_50%)]"></div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+        <div className="container-custom relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-24 gap-6 md:gap-8">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -405,7 +405,7 @@ const Home: React.FC = () => {
         {/* Decorative background */}
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#002147 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+        <div className="container-custom relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center mb-24 gap-8">
             <div className="max-w-2xl text-center md:text-left">
               <h2 className="hero-title text-4xl md:text-8xl text-slate-900 tracking-tighter">
@@ -469,7 +469,7 @@ const Home: React.FC = () => {
           backgroundSize: '40px 40px' 
         }}></div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+        <div className="container-custom relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
             {/* Content Side */}
             <div className="w-full lg:w-2/5">
@@ -488,7 +488,7 @@ const Home: React.FC = () => {
                 </p>
 
                 <div className="space-y-6">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-blue mb-4">Provinces We Deliver To</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-blue mb-4">Our Service Reach</div>
                   <div className="flex flex-wrap gap-2">
                     {['Ontario', 'Quebec', 'British Columbia', 'Alberta', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Newfoundland and Labrador', 'Prince Edward Island'].map((province) => (
                       <button
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-32 bg-brand-blue relative overflow-hidden text-center">
+      <section className="section-padding bg-brand-blue relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_70%)]"></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <h2 className="hero-title text-4xl md:text-8xl text-white mb-6 md:mb-8 leading-tight tracking-tighter">Ready to Move <br/> <span className="text-white/80">Your Freight?</span></h2>

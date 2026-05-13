@@ -49,7 +49,7 @@ const About: React.FC = () => {
   const faqs = [
     {
       question: "What areas do you cover?",
-      answer: "We provide comprehensive delivery solutions across all Canadian provinces, including Ontario, Quebec, British Columbia, Alberta, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, Newfoundland and Labrador, and Prince Edward Island."
+      answer: "We provide comprehensive delivery solutions across Canada, ensuring efficient and professional service for urban centres as well as regional destinations."
     },
     {
       question: "How long has Inter-Citi Logistics been in business?",
@@ -85,7 +85,7 @@ const About: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/0 via-brand-blue/40 to-brand-blue"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-10 pt-40 pb-20 md:pt-56 md:pb-32 flex flex-col lg:flex-row items-center gap-16">
+        <div className="relative z-10 container-custom pt-40 pb-20 md:pt-56 md:pb-32 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 lg:pl-12 order-2 lg:order-1">
             <motion.h1 
               initial={{ opacity: 0, x: -30 }}
@@ -103,7 +103,7 @@ const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-white/60 text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-light"
             >
-              Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 2001. Over 25 years of excellence, engineered for the modern world.
+              For 25+ years, Inter-Citi Logistics has been trusted across Canada for reliable, modern logistics solutions. Built on proven experience and driven by innovation, we keep people, products, and possibilities moving forward.
             </motion.p>
 
             <motion.div
@@ -115,8 +115,6 @@ const About: React.FC = () => {
               <Counter value="25+" label="Years of Expertise" delay={0.4} />
               <div className="w-px h-12 bg-white/10"></div>
               <Counter value="1.2M+" label="Deliveries" delay={0.5} />
-              <div className="w-px h-12 bg-white/10"></div>
-              <Counter value="10" label="Provinces" delay={0.6} />
             </motion.div>
           </div>
           
@@ -134,23 +132,13 @@ const About: React.FC = () => {
               />
               <div className="absolute inset-0 bg-brand-blue/20"></div>
             </motion.div>
-            
-            {/* Floating Badge */}
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2.5rem] shadow-2xl hidden md:block"
-            >
-              <Award className="w-10 h-10 text-brand-blue mb-4" />
-              <div className="text-xs font-black uppercase tracking-widest text-slate-900">Est. 2001</div>
-            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Narrative Section - Editorial Layout */}
-      <section className="py-24 md:py-48 relative overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <section className="section-padding relative overflow-hidden bg-white">
+        <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-32 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
@@ -164,32 +152,33 @@ const About: React.FC = () => {
               </h2>
               <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-light">
                 <p>
-                  Inter-Citi Logistics has been a trusted logistics provider serving clients across Canada since 2001. Over 25 years of excellence, we have earned a reputation for dependable service, fast turnaround times, and professional support.
+                  At Inter-Citi Logistics, service is more than transportation. It is consistency, communication, and care in every delivery. Our team is built around fast turnaround times, dependable support, and logistics solutions that clients can rely on every day.
                 </p>
                 <p>
-                  With one- and two-day delivery, an established transportation network, and extensive industry expertise, we provide logistics solutions that are efficient, flexible, and reliable.
+                  Supported by a reliable transportation network, flexible service capabilities, and a commitment to quick turnaround times, we make it easier to keep shipments moving efficiently across Canada.
                 </p>
               </div>
             </motion.div>
 
             <div className="lg:col-span-6">
               <div className="relative">
-                <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
-                <div className="relative space-y-8">
+                <div className="absolute -inset-2 md:-inset-4 bg-brand-blue/5 rounded-[2rem] md:rounded-[3rem] blur-3xl"></div>
+                <div className="relative space-y-6 md:space-y-8">
                   <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="p-12 bg-slate-50 border border-slate-100 rounded-[3rem] hover:bg-white hover:shadow-2xl transition-all duration-500 group"
+                    className="p-8 md:p-12 bg-slate-50 border border-slate-100 rounded-[2rem] md:rounded-[3rem] hover:bg-white hover:shadow-2xl transition-all duration-500 group"
                   >
-                    <div className="flex items-center gap-6 mb-8">
-                      <div className="w-14 h-14 bg-brand-blue text-white rounded-2xl flex items-center justify-center shadow-lg">
-                        <Target className="w-7 h-7" />
+                    <div className="flex items-center gap-6 mb-6 md:mb-8">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-brand-blue text-white rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg">
+                        <Target className="w-6 h-6 md:w-7 md:h-7" />
                       </div>
-                      <h3 className="text-3xl font-black text-slate-900 tracking-tight">Our Mission</h3>
+                      <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Our Mission</h3>
                     </div>
-                    <p className="text-slate-500 text-lg leading-relaxed italic font-light">
-                      "Delivering quality with every mile. Efficient logistics. Reliable service. Customer satisfaction in every delivery."
+                    <p className="text-slate-500 text-base md:text-lg leading-relaxed italic font-light">
+                      Delivering quality with every mile.<br/>
+                      Efficient logistics. Reliable service. Customer satisfaction in every delivery.
                     </p>
                   </motion.div>
 
@@ -198,15 +187,15 @@ const About: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="p-12 bg-brand-blue text-white rounded-[3rem] shadow-2xl group"
+                    className="p-8 md:p-12 bg-brand-blue text-white rounded-[2rem] md:rounded-[3rem] shadow-2xl group"
                   >
-                    <div className="flex items-center gap-6 mb-8">
-                      <div className="w-14 h-14 bg-white text-brand-blue rounded-2xl flex items-center justify-center shadow-lg">
-                        <TrendingUp className="w-7 h-7" />
+                    <div className="flex items-center gap-6 mb-6 md:mb-8">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-white text-brand-blue rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg">
+                        <TrendingUp className="w-6 h-6 md:w-7 md:h-7" />
                       </div>
-                      <h3 className="text-3xl font-black tracking-tight">Our Vision</h3>
+                      <h3 className="text-2xl md:text-3xl font-black tracking-tight">Our Vision</h3>
                     </div>
-                    <p className="text-white/60 text-lg leading-relaxed italic font-light">
+                    <p className="text-white/60 text-base md:text-lg leading-relaxed italic font-light">
                       "To be the most trusted name in Canadian logistics, setting the standard for reliability and service excellence through innovation and integrity."
                     </p>
                   </motion.div>
@@ -218,8 +207,8 @@ const About: React.FC = () => {
       </section>
 
       {/* Founder Section */}
-      <section className="py-24 md:py-48 bg-slate-50 relative overflow-hidden border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+      <section className="section-padding bg-slate-50 relative overflow-hidden border-b border-slate-100">
+        <div className="max-w-4xl mx-auto px-6 md:px-8 lg:px-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -231,15 +220,18 @@ const About: React.FC = () => {
               Meet Our <br/> <span className="text-brand-blue italic">Founder.</span>
             </h2>
             <div className="space-y-8 text-slate-600 text-lg md:text-xl leading-relaxed">
-              <p className="font-bold text-slate-900 text-2xl">Kula Sellathurai — President of Inter-Citi Logistics</p>
+              <p className="font-bold text-slate-900 text-2xl">Kula Sellathurai — President & Founder of Inter-Citi Logistics</p>
               <p>
-                Kula Sellathurai is the President of Inter-Citi Logistics and a respected entrepreneur with decades of business leadership experience. He founded Inter-Citi Logistics in 2001 after recognizing a market need for industry-specific logistics solutions, and has since played a key role in building the company into a trusted logistics provider in Canada.
+                Kula Sellathurai is the President and Founder of Inter-Citi Logistics, bringing decades of leadership experience, entrepreneurial vision, and community commitment to the company. His journey began with a clear purpose: to build a logistics company known not only for dependable service, but for trust, professionalism, and long-term relationships.
               </p>
               <p>
-                Beyond his leadership at Inter-Citi Logistics, Kula has held several prominent roles in business and community organizations, including President of the Canada Sri Lanka Business Convention, President of the Sri Lanka Canada Business Council, Deputy Secretary General of the Global Federation of Sri Lankan Business Councils, and Past President of the Canadian Tamil Chamber of Commerce.
+                Under his leadership, Inter-Citi Logistics has grown with a strong focus on reliability, practical solutions, and client care. Kula’s approach has always been rooted in understanding real needs, solving challenges with confidence, and creating a service experience that clients can depend on.
               </p>
               <p>
-                His accomplishments have been recognized through numerous honours, including the Her Majesty Queen Elizabeth II Diamond Jubilee Medal, the Her Majesty Queen Elizabeth II Platinum Jubilee Medal, the His Majesty King Charles III Coronation Medal, and recognition as one of the Top 25 South Asian Entrepreneurs in Canada.
+                Beyond Inter-Citi Logistics, Kula has made significant contributions to business and community organizations. He has served in several respected leadership roles, including President of the Canada Sri Lanka Business Convention, President of the Sri Lanka Canada Business Council, Deputy Secretary General of the Global Federation of Sri Lankan Business Councils, and Past President of the Canadian Tamil Chamber of Commerce.
+              </p>
+              <p>
+                His leadership and service have been recognized through numerous honours, including the Her Majesty Queen Elizabeth II Diamond Jubilee Medal, the Her Majesty Queen Elizabeth II Platinum Jubilee Medal, His Majesty King Charles III Coronation Medal, and recognition as one of the Top 25 South Asian Entrepreneurs in Canada.
               </p>
             </div>
           </motion.div>
@@ -247,8 +239,8 @@ const About: React.FC = () => {
       </section>
 
       {/* Values Grid */}
-      <section className="py-24 md:py-48 bg-brand-blue">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <section className="section-padding bg-brand-blue">
+        <div className="container-custom">
           <div className="text-center mb-24">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -259,7 +251,7 @@ const About: React.FC = () => {
                 Core <span className="text-white/80 italic">Values.</span>
               </motion.h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-[2rem] md:rounded-[3rem] overflow-hidden">
             <ValueCard icon={<Users />} title="Our Service" body="We are committed to operating with efficiency, professionalism, and full compliance with all rules and regulations. Every shipment is handled with care, accuracy, and accountability." delay={0.1} />
             <ValueCard icon={<Target />} title="Our People" body="Our people are the foundation of our success. We value our clients, support our employees, and foster a workplace built on respect, reliability, and performance." delay={0.2} />
             <ValueCard icon={<Heart />} title="Our Community" body="Giving back is part of who we are. We take pride in supporting and volunteering within our community, building connections that extend beyond logistics." delay={0.3} />
@@ -268,8 +260,8 @@ const About: React.FC = () => {
       </section>
 
       {/* Maintenance Section */}
-      <section className="py-24 md:py-48 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -299,10 +291,10 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
+              <div className="absolute -inset-2 md:-inset-4 bg-brand-blue/5 rounded-[2rem] md:rounded-[3rem] blur-3xl"></div>
               <img 
                 src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/modern-automobile-mechanic-composition.jpg" 
-                className="relative rounded-[3rem] shadow-2xl w-full aspect-square object-cover" 
+                className="relative rounded-[2rem] md:rounded-[3rem] shadow-2xl w-full aspect-square object-cover" 
                 alt="Maintenance" 
                 referrerPolicy="no-referrer"
               />
@@ -312,8 +304,8 @@ const About: React.FC = () => {
       </section>
 
       {/* Safety & Compliance Section */}
-      <section className="py-24 md:py-48 bg-slate-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+      <section className="section-padding bg-slate-50 relative overflow-hidden">
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -322,10 +314,10 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative order-2 lg:order-1"
             >
-              <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] blur-3xl"></div>
+              <div className="absolute -inset-2 md:-inset-4 bg-brand-blue/5 rounded-[2rem] md:rounded-[3rem] blur-3xl"></div>
               <img 
                 src="https://raw.githubusercontent.com/vathsan-sharma/inticiti-images/main/factory-worker-holding-clipboard-checking-inventory-warehouse-storage-department.jpg" 
-                className="relative rounded-[3rem] shadow-2xl w-full aspect-square object-cover" 
+                className="relative rounded-[2rem] md:rounded-[3rem] shadow-2xl w-full aspect-square object-cover" 
                 alt="Safety and Compliance" 
                 referrerPolicy="no-referrer"
               />
@@ -357,8 +349,8 @@ const About: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 md:py-48 bg-brand-blue relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+      <section className="section-padding bg-brand-blue relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6 md:px-8 lg:px-10">
           <div className="text-center mb-24">
             <h2 className="hero-title text-4xl md:text-8xl text-white tracking-tighter">
               Common <span className="text-white/80 italic">Questions.</span>
@@ -407,7 +399,7 @@ const ValueCard: React.FC<{icon: React.ReactNode, title: string, body: string, d
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6, delay }}
-    className="p-12 bg-brand-blue hover:bg-white/5 transition-colors group"
+    className="p-8 md:p-12 bg-brand-blue hover:bg-white/5 transition-all duration-500 group"
   >
     <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:bg-white group-hover:text-brand-blue transition-all duration-500">
       {icon}

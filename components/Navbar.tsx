@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-10 pt-4 md:pt-6">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 md:gap-8">
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 md:gap-8">
         
         {/* Left Nav Links - The only part with the "menu bar" styling */}
         <div className="hidden lg:flex items-center flex-1">

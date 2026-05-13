@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="bg-brand-blue text-white/60 pt-24 pb-12 border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[300px] bg-white/5 blur-[120px] rounded-full -mt-40"></div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+      <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           {/* About Column */}
           <div className="col-span-1 lg:col-span-1">

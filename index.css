@@ -49,22 +49,22 @@
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-6 lg:px-10 w-full;
+    @apply max-w-6xl mx-auto px-6 md:px-8 lg:px-10 w-full;
   }
 
   .hero-title {
-    @apply font-sans font-extrabold tracking-tighter leading-[0.95] md:leading-[0.9];
-    font-size: clamp(2rem, 4.5vw + 1rem, 4.5rem);
+    @apply font-sans font-extrabold tracking-tighter leading-[1.1] md:leading-[1];
+    font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
   }
 
   .hero-subtitle {
-    font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
     @apply text-white/60 leading-relaxed font-medium;
   }
 
   .section-padding {
-    padding-top: clamp(4rem, 10vh, 10rem);
-    padding-bottom: clamp(4rem, 10vh, 10rem);
+    padding-top: clamp(3rem, 8vh, 8rem);
+    padding-bottom: clamp(3rem, 8vh, 8rem);
   }
 
   .nav-glass {

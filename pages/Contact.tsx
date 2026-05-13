@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-accent/20 blur-[120px] rounded-full"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 pt-40 pb-20 md:pt-56 md:pb-32">
+        <div className="container-custom relative z-10 pt-40 pb-20 md:pt-56 md:pb-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-32">
+      <div className="container-custom py-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
           {/* Contact Info */}
           <div className="lg:col-span-4 space-y-12">
